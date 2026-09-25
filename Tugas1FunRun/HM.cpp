@@ -1,32 +1,31 @@
 /*
-judul : perhitungan total waktu dan pace rata-rata half marathon
+judul : analisis performa lari half marathon berbasis split pace
 
 kamus :
-    type SplitLari : <
-        km : integer,
-        pace : string
+    type RekapKm : <
+        urutanKm : integer,
+        tempo : string
     >
-    daftarSplit[21] : SplitLari
-    totalDetik, totalKm, rataPace : integer
-    i, dtk : integer
+    catatanSplit[21] : RekapKm
+    durasiTotalDetik, jarakTempuh, rerataPace : integer
+    pos, konversiDetik : integer
 
 diskripsi :
-    // inisialisasi data split marathon
-    totalDetik <-- 0
-    totalKm <-- 21
+    durasiTotalDetik <-- 0
+    jarakTempuh <-- 21
 
-    // akumulasi total detik dari setiap km
-    traversal (i <-- 0 to totalKm-1)
-        dtk <-- paceKeDetik(daftarSplit[i].pace)
-        totalDetik <-- totalDetik + dtk
+    // akumulasi total waktu per kilometer
+    traversal (pos <-- 0 to jarakTempuh-1)
+        konversiDetik <-- ubahTempoKeDetik(catatanSplit[pos].tempo)
+        durasiTotalDetik <-- durasiTotalDetik + konversiDetik
 
     // hitung rata-rata pace per km
-    rataPace <-- totalDetik / totalKm
+    rerataPace <-- durasiTotalDetik / jarakTempuh
 
-    // output hasil akhir
-    output(totalKm)
-    output(totalDetik)
-    output(rataPace)
+    // tampilkan output perhitungan
+    output(jarakTempuh)
+    output(durasiTotalDetik)
+    output(rerataPace)
 
 Oleh : Muhammad Fajri Setyawan
 NIM  : A11.2026.16638
@@ -37,67 +36,67 @@ NIM  : A11.2026.16638
 
 using namespace std;
 
-// kamus global
-struct SplitLari {
-  int km;
-  string pace;
+// kamus global: tipe data bentukan untuk split km
+struct RekapKm {
+  int urutanKm; // penanda km ke-n
+  string tempo; // string tempo "MM:SS"
 };
 
-// fungsi konversi pace mm:ss ke detik
-int paceKeDetik(string waktu) {
-  int m = stoi(waktu.substr(0, 2));
-  int s = stoi(waktu.substr(3, 2));
-  return (m * 60) + s;
+// fungsi konversi string "MM:SS" menjadi satuan detik
+int ubahTempoKeDetik(string nilaiTempo) {
+  int menit = stoi(nilaiTempo.substr(0, 2));
+  int detik = stoi(nilaiTempo.substr(3, 2));
+  return (menit * 60) + detik;
 }
 
-// prosedur cetak waktu format hh:mm:ss
-void tampilkanWaktuLengkap(int totalDetik) {
-  int jam = totalDetik / 3600;
-  int sisa = totalDetik % 3600;
-  int menit = sisa / 60;
-  int detik = sisa % 60;
+// prosedur konversi total detik ke format jam:menit:detik
+void tampilkanWaktu(int waktuDetik) {
+  int j = waktuDetik / 3600;
+  int sisa = waktuDetik % 3600;
+  int m = sisa / 60;
+  int d = sisa % 60;
 
-  cout << jam << ":";
-  if (menit < 10)
+  cout << j << ":";
+  if (m < 10)
     cout << "0";
-  cout << menit << ":";
-  if (detik < 10)
+  cout << m << ":";
+  if (d < 10)
     cout << "0";
-  cout << detik;
+  cout << d;
 }
 
 // diskripsi program utama
 int main() {
-  // kamus lokal
-  SplitLari daftarSplit[21] = {
+  // kamus lokal: data split km 1 sampai 21 dari strava
+  RekapKm catatanSplit[21] = {
       {1, "06:05"},  {2, "06:01"},  {3, "05:57"},  {4, "06:05"},  {5, "05:58"},
       {6, "06:04"},  {7, "05:58"},  {8, "05:57"},  {9, "06:05"},  {10, "06:01"},
       {11, "06:02"}, {12, "06:08"}, {13, "06:09"}, {14, "05:58"}, {15, "06:20"},
       {16, "06:13"}, {17, "06:20"}, {18, "06:17"}, {19, "06:26"}, {20, "06:47"},
       {21, "06:11"}};
 
-  int totalDetik = 0;
-  int totalKm = 21;
+  int durasiTotalDetik = 0;
+  int jarakTempuh = 21;
 
-  // proses akumulasi detik per km
-  for (int i = 0; i < totalKm; i++) {
-    int dtk = paceKeDetik(daftarSplit[i].pace);
-    totalDetik = totalDetik + dtk;
+  // perulangan menghitung akumulasi waktu tempuh
+  for (int pos = 0; pos < jarakTempuh; pos++) {
+    int konversiDetik = ubahTempoKeDetik(catatanSplit[pos].tempo);
+    durasiTotalDetik = durasiTotalDetik + konversiDetik;
   }
 
-  // hitung rata-rata pace
-  int rataPace = totalDetik / totalKm;
+  // hitung rata-rata pace per km
+  int rerataPace = durasiTotalDetik / jarakTempuh;
 
-  // output hasil perhitungan
-  cout << "Hasil Perhitungan Half-Marathon:\n";
-  cout << "- Total Jarak      : " << totalKm << " KM\n";
-  cout << "- Total Waktu      : ";
-  tampilkanWaktuLengkap(totalDetik);
-  cout << " (" << totalDetik << " detik)\n";
+  // langsung tampilkan hasil perhitungan tanpa cetak tabel
+  cout << "Hasil Kalkulasi Half-Marathon:\n";
+  cout << "- Total Jarak    : " << jarakTempuh << " KM\n";
+  cout << "- Total Durasi   : ";
+  tampilkanWaktu(durasiTotalDetik);
+  cout << " (" << durasiTotalDetik << " detik)\n";
 
-  cout << "- Pace Rata-rata   : 0" << rataPace / 60 << ":"
-       << (rataPace % 60 < 10 ? "0" : "") << rataPace % 60 << " /km ("
-       << rataPace << " detik/km)\n";
+  cout << "- Rata-rata Pace : 0" << rerataPace / 60 << ":"
+       << (rerataPace % 60 < 10 ? "0" : "") << rerataPace % 60 << " /km ("
+       << rerataPace << " detik/km)\n";
 
   return 0;
 }
