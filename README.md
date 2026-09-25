@@ -31,7 +31,7 @@
     </tr>
     <tr>
       <td><b>Mata Kuliah</b></td>
-      <td>Dasar Pemrograman (A11)</td>
+      <td>Dasar Pemrograman</td>
     </tr>
     <tr>
       <td><b>Implementasi</b></td>
