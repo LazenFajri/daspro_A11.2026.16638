@@ -1,58 +1,56 @@
 /*
-    Judul     : Perhitungan KM Splits Half-Marathon (ADT Struct)
-    Deskripsi : Menghitung total durasi dan rata-rata pace dari KM 1 hingga 21
-                berdasarkan alur notasi algoritmik.
-    Oleh      : Muhammad Fajri Setyawan
-    NIM       : A11.2026.16638
+judul : perhitungan total waktu dan pace rata-rata half marathon
 
-    ========================================================================
-    NOTASI PEMBAHASAN / ALUR LOGIKA (ALGORITMA):
-    ========================================================================
-    1. DEFINISI TIPE DATA:
-       - Buat struct 'SplitLari' berisi: km (integer) dan pace (string MM:SS).
+kamus :
+    type SplitLari : <
+        km : integer,
+        pace : string
+    >
+    daftarSplit[21] : SplitLari
+    totalDetik, totalKm, rataPace : integer
+    i, dtk : integer
 
-    2. FUNGSI KONVERSI PACE:
-       - Input string pace "MM:SS".
-       - Potong menit (indeks 0..1) dan detik (indeks 3..4).
-       - Ubah string menjadi nilai integer.
-       - Kembalikan nilai total detik: (menit * 60) + detik.
+diskripsi :
+    // inisialisasi data split marathon
+    totalDetik <-- 0
+    totalKm <-- 21
 
-    3. PROGRAM UTAMA (MAIN):
-       - Inisialisasi array struct berisi 21 data split kilometer marathon.
-       - Inisialisasi 'totalDetik' = 0 dan 'totalKm' = 21.
-       - Lakukan perulangan (loop) dari indeks 0 hingga 20:
-           a. Ubah pace string KM saat ini ke satuan detik -> dtk.
-           b. Tambahkan ke total akumulasi: totalDetik = totalDetik + dtk.
-       - Hitung rata-rata pace per KM: rataPace = totalDetik / totalKm.
-       - Tampilkan langsung hasil akhir total waktu tempuh (HH:MM:SS)
-         dan rata-rata pace (MM:SS) ke layar.
-    ========================================================================
-*/
+    // akumulasi total detik dari setiap km
+    traversal (i <-- 0 to totalKm-1)
+        dtk <-- paceKeDetik(daftarSplit[i].pace)
+        totalDetik <-- totalDetik + dtk
+
+    // hitung rata-rata pace per km
+    rataPace <-- totalDetik / totalKm
+
+    // output hasil akhir
+    output(totalKm)
+    output(totalDetik)
+    output(rataPace)
+
+Oleh : Muhammad Fajri Setyawan
+NIM  : A11.2026.16638
+*************************************************************/
 
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-// ========================================================
-// KAMUS GLOBAL
-// ========================================================
-
-// Definisi struct
+// kamus global
 struct SplitLari {
   int km;
-  string pace; // format MM:SS
+  string pace;
 };
 
-// Fungsi konversi format pace MM:SS ke detik
+// fungsi konversi pace mm:ss ke detik
 int paceKeDetik(string waktu) {
   int m = stoi(waktu.substr(0, 2));
   int s = stoi(waktu.substr(3, 2));
-
   return (m * 60) + s;
 }
 
-// Prosedur menampilkan format HH:MM:SS
+// prosedur cetak waktu format hh:mm:ss
 void tampilkanWaktuLengkap(int totalDetik) {
   int jam = totalDetik / 3600;
   int sisa = totalDetik % 3600;
@@ -68,11 +66,9 @@ void tampilkanWaktuLengkap(int totalDetik) {
   cout << detik;
 }
 
-// ========================================================
-// DESKRIPSI
-// ========================================================
+// diskripsi program utama
 int main() {
-  // Inisialisasi data split KM 1 - 21
+  // kamus lokal
   SplitLari daftarSplit[21] = {
       {1, "06:05"},  {2, "06:01"},  {3, "05:57"},  {4, "06:05"},  {5, "05:58"},
       {6, "06:04"},  {7, "05:58"},  {8, "05:57"},  {9, "06:05"},  {10, "06:01"},
@@ -83,16 +79,16 @@ int main() {
   int totalDetik = 0;
   int totalKm = 21;
 
-  // Perhitungan di balik layar tanpa mencetak tabel
+  // proses akumulasi detik per km
   for (int i = 0; i < totalKm; i++) {
     int dtk = paceKeDetik(daftarSplit[i].pace);
     totalDetik = totalDetik + dtk;
   }
 
-  // Menghitung rata-rata pace per KM
+  // hitung rata-rata pace
   int rataPace = totalDetik / totalKm;
 
-  // Tampilkan hasil akhir
+  // output hasil perhitungan
   cout << "Hasil Perhitungan Half-Marathon:\n";
   cout << "- Total Jarak      : " << totalKm << " KM\n";
   cout << "- Total Waktu      : ";
