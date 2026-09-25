@@ -15,7 +15,7 @@
 
 > **Nama Lengkap** : Muhammad Fajri Setyawan  
 > **NIM** : `A11.2026.16638`  
-> **Mata Kuliah** : Dasar Pemrograman (A11)  
+> **Mata Kuliah** : Dasar Pemrograman  
 > **Komponen** : `struct`, `std::string::substr`, `std::stoi`, Time Converter
 
 ---
