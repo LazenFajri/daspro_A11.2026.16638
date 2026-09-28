@@ -125,9 +125,6 @@
 
 </details>
 
-
----
-
 <a id="tugas1kulino"></a>
 
 #### Tugas 1 — Praktikum Algoritma & Pemrograman (Kulino)
@@ -154,17 +151,10 @@
 
 ---
 
-### ⚙️ Sistem Pembaruan Otomatis (Automation Guide)
+<div align="center">
 
-> [!TIP]
-> **Otomatisasi Penuh Aktif:** README.md ini digenerate secara dinamis. Setiap kali kamu menambahkan tugas baru:
-> 1. Buat folder baru (contoh: `Tugas2Array`, `Tugas3Fungsi`, dsb).
-> 2. Tulis kode C++ kamu di dalam folder tersebut.
-> 3. Lakukan `git add`, `git commit`, dan `git push` ke GitHub.
-> 4. **GitHub Actions** akan otomatis mendeteksi tugas baru, menghitung metrik, dan memperbarui `README.md` dengan tampilan estetik ini!
->
-> *Kamu juga bisa memperbarui README lokal secara manual kapan saja dengan menjalankan:*  
-> `python scripts/generate_readme.py`
+[![Last Commit](https://img.shields.io/github/last-commit/LazenFajri/daspro_A11.2026.16638?style=flat-square&logo=github&label=Terakhir%20Diperbarui&color=007ACC)](https://github.com/LazenFajri/daspro_A11.2026.16638/commits/main)
 
+<sub>Terakhir disinkronkan otomatis pada: <b>28 September 2026, 18:42 WIB</b> • Dikelola oleh GitHub Actions</sub>
 
-<div align="center"><sub>Terakhir disinkronkan otomatis pada: 28 September 2026 • Dikelola oleh GitHub Actions</sub></div>
+</div>

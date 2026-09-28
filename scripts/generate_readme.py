@@ -236,8 +236,6 @@ def generate_markdown(tasks):
     total_pdf = sum(t["pdf_count"] for t in tasks)
     total_loc = sum(t["loc"] for t in tasks)
     
-    current_time = datetime.now().strftime("%d %B %Y")
-    
     md = []
     
     # 1. Header & Hero Section
@@ -305,19 +303,19 @@ def generate_markdown(tasks):
             md.append(t["custom_content"])
             md.append('')
             
-        md.append('\n---\n')
-        
-    # 6. Panduan Otomatisasi (Footer)
-    md.append('### ⚙️ Sistem Pembaruan Otomatis (Automation Guide)\n')
-    md.append('> [!TIP]')
-    md.append('> **Otomatisasi Penuh Aktif:** README.md ini digenerate secara dinamis. Setiap kali kamu menambahkan tugas baru:')
-    md.append('> 1. Buat folder baru (contoh: `Tugas2Array`, `Tugas3Fungsi`, dsb).')
-    md.append('> 2. Tulis kode C++ kamu di dalam folder tersebut.')
-    md.append('> 3. Lakukan `git add`, `git commit`, dan `git push` ke GitHub.')
-    md.append('> 4. **GitHub Actions** akan otomatis mendeteksi tugas baru, menghitung metrik, dan memperbarui `README.md` dengan tampilan estetik ini!')
-    md.append('>\n> *Kamu juga bisa memperbarui README lokal secara manual kapan saja dengan menjalankan:*  \n> `python scripts/generate_readme.py`\n')
+    # Format Waktu Indonesia (WIB)
+    bulan_indo = {
+        1: "Januari", 2: "Februari", 3: "Maret", 4: "April", 5: "Mei", 6: "Juni",
+        7: "Juli", 8: "Agustus", 9: "September", 10: "Oktober", 11: "November", 12: "Desember"
+    }
+    now = datetime.now()
+    current_time = f"{now.day} {bulan_indo[now.month]} {now.year}, {now.strftime('%H:%M')} WIB"
     
-    md.append(f'\n<div align="center"><sub>Terakhir disinkronkan otomatis pada: {current_time} • Dikelola oleh GitHub Actions</sub></div>\n')
+    # Footer dengan Dynamic GitHub Badge & Waktu Terakhir Sinkronisasi
+    md.append('\n---\n\n<div align="center">\n')
+    md.append(f'[![Last Commit](https://img.shields.io/github/last-commit/{PROFILE["github_user"]}/{PROFILE["repo_name"]}?style=flat-square&logo=github&label=Terakhir%20Diperbarui&color=007ACC)](https://github.com/{PROFILE["github_user"]}/{PROFILE["repo_name"]}/commits/main)\n')
+    md.append(f'<sub>Terakhir disinkronkan otomatis pada: <b>{current_time}</b> • Dikelola oleh GitHub Actions</sub>\n')
+    md.append('</div>\n')
     
     return "\n".join(md)
 
