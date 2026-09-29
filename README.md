@@ -28,7 +28,7 @@
 
 <img src="https://img.shields.io/badge/TOTAL_MODUL_TUGAS-2_Modul-black?style=for-the-badge&labelColor=1a1a1a&color=007ACC" height="38" alt="Total Modul" />
 <img src="https://img.shields.io/badge/SOURCE_FILES-9_Files-black?style=for-the-badge&labelColor=1a1a1a&color=4CAF50" height="38" alt="Source Files" />
-<img src="https://img.shields.io/badge/DOKUMEN_PDF-3_Berkas-black?style=for-the-badge&labelColor=1a1a1a&color=E91E63" height="38" alt="Dokumen PDF" />
+<img src="https://img.shields.io/badge/DOKUMEN_PDF-4_Berkas-black?style=for-the-badge&labelColor=1a1a1a&color=E91E63" height="38" alt="Dokumen PDF" />
 <img src="https://img.shields.io/badge/TOTAL_BARIS_KODE-362_LOC-black?style=for-the-badge&labelColor=1a1a1a&color=FF9800" height="38" alt="Total LOC" />
 
 </div>
@@ -40,7 +40,7 @@
 | No | Modul Tugas | Topik / Fokus Materi | File C++ | Dokumen | Status | Navigasi |
 | :-: | :--- | :--- | :-: | :-: | :-: | :-: |
 | `01` | **Tugas 1 — Fun Run & Half Marathon Activity Recorder** | `ADT Struct, String Parsing & Time Telemetry Aggregator` | `2` | `0` | <span style="color:#4CAF50">●</span> Selesai | [Buka Detail](#tugas1funrun) |
-| `02` | **Tugas 1 — Praktikum Algoritma & Pemrograman (Kulino)** | `Aljabar, Percabangan (If-Else), Perulangan, & Pointer Dasar` | `7` | `3` | <span style="color:#4CAF50">●</span> Selesai | [Buka Detail](#tugas1kulino) |
+| `02` | **Tugas 1 — Praktikum Algoritma & Pemrograman (Kulino)** | `Aljabar, Percabangan (If-Else), Perulangan, & Pointer Dasar` | `7` | `4` | <span style="color:#4CAF50">●</span> Selesai | [Buka Detail](#tugas1kulino) |
 
 ---
 
@@ -56,8 +56,8 @@
 
 | Berkas | Format | Ukuran | Deskripsi & Topik Pembahasan |
 | :--- | :---: | :---: | :--- |
-| [`CircleLari.cpp`](./Tugas1FunRun/CircleLari.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `2.9 KB` | Rekapitulasi durasi jogging nadia 5 hari |
-| [`HM.cpp`](./Tugas1FunRun/HM.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `2.9 KB` | Analisis performa lari half marathon berbasis split pace |
+| [`CircleLari.cpp`](./Tugas1FunRun/CircleLari.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `3.0 KB` | Rekapitulasi durasi jogging nadia 5 hari |
+| [`HM.cpp`](./Tugas1FunRun/HM.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `3.0 KB` | Analisis performa lari half marathon berbasis split pace |
 
 ### 🏃 Dashboard Metrik Fun Run & Half Marathon
 
@@ -131,22 +131,23 @@
 
 > 📂 **Folder**: [`Tugas1Kulino`](./Tugas1Kulino)  
 > 🎯 **Topik**: Aljabar, Percabangan (If-Else), Perulangan, & Pointer Dasar  
-> 📈 **Statistik**: `7 File C++` | `3 Dokumen PDF` | `187 Baris Kode`
+> 📈 **Statistik**: `7 File C++` | `4 Dokumen PDF` | `187 Baris Kode`
 
 | Berkas | Format | Ukuran | Deskripsi & Topik Pembahasan |
 | :--- | :---: | :---: | :--- |
-| [`PAS1_Analisis_Kasus7_A.11.2026.16638.pdf`](./Tugas1Kulino/PAS1_Analisis_Kasus7_A.11.2026.16638.pdf) | ![PDF](https://img.shields.io/badge/-PDF-red?style=flat-square&logo=adobeacrobatreader&logoColor=white) | `90.9 KB` | Dokumen Analisis / Notasi Algoritmik / Laporan |
-| [`PAS1_NotasiAlgoritmik_Kasus2_A11.2026.16638.pdf`](./Tugas1Kulino/PAS1_NotasiAlgoritmik_Kasus2_A11.2026.16638.pdf) | ![PDF](https://img.shields.io/badge/-PDF-red?style=flat-square&logo=adobeacrobatreader&logoColor=white) | `53.5 KB` | Dokumen Analisis / Notasi Algoritmik / Laporan |
-| [`PAS1_NotasiAlgoritmik_Kasus3_A.11.2026.16638.pdf`](./Tugas1Kulino/PAS1_NotasiAlgoritmik_Kasus3_A.11.2026.16638.pdf) | ![PDF](https://img.shields.io/badge/-PDF-red?style=flat-square&logo=adobeacrobatreader&logoColor=white) | `48.8 KB` | Dokumen Analisis / Notasi Algoritmik / Laporan |
-| [`PAS_Kasus1_A11.2026.16638.cpp`](./Tugas1Kulino/PAS_Kasus1_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `949 B` | 1. y = a^3 + 7 |
-| [`PAS_Kasus2_A11.2026.16638.cpp`](./Tugas1Kulino/PAS_Kasus2_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `949 B` | Upah regular |
-| [`PAS_Kasus3_A11.2026.16638.cpp`](./Tugas1Kulino/PAS_Kasus3_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `422 B` | Jika A lebih besar dari B, maka B dikalikan 2 |
-| [`PAS_Kasus4_A11.2026.16638.cpp`](./Tugas1Kulino/PAS_Kasus4_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `790 B` | Pemrosesan Array 1D (Min, Max, Sum, & Rata-rata) |
+| [`PAS1_Analisis_Kasus5_A11.2026.16638.pdf`](./Tugas1Kulino/PAS1_Analisis_Kasus5_A11.2026.16638.pdf) | ![PDF](https://img.shields.io/badge/-PDF-red?style=flat-square&logo=adobeacrobatreader&logoColor=white) | `4011.8 KB` | Dokumen Analisis / Notasi Algoritmik / Laporan |
+| [`PAS1_Analisis_Kasus7_A11.2026.16638.pdf`](./Tugas1Kulino/PAS1_Analisis_Kasus7_A11.2026.16638.pdf) | ![PDF](https://img.shields.io/badge/-PDF-red?style=flat-square&logo=adobeacrobatreader&logoColor=white) | `3543.9 KB` | Dokumen Analisis / Notasi Algoritmik / Laporan |
+| [`PAS1_NotasiAlgoritmik_Kasus2_A11.2026.16638.pdf`](./Tugas1Kulino/PAS1_NotasiAlgoritmik_Kasus2_A11.2026.16638.pdf) | ![PDF](https://img.shields.io/badge/-PDF-red?style=flat-square&logo=adobeacrobatreader&logoColor=white) | `581.1 KB` | Dokumen Analisis / Notasi Algoritmik / Laporan |
+| [`PAS1_NotasiAlgoritmik_Kasus3_A11.2026.16638.pdf`](./Tugas1Kulino/PAS1_NotasiAlgoritmik_Kasus3_A11.2026.16638.pdf) | ![PDF](https://img.shields.io/badge/-PDF-red?style=flat-square&logo=adobeacrobatreader&logoColor=white) | `3192.0 KB` | Dokumen Analisis / Notasi Algoritmik / Laporan |
+| [`PAS_Kasus1_A11.2026.16638.cpp`](./Tugas1Kulino/PAS_Kasus1_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `989 B` | 1. y = a^3 + 7 |
+| [`PAS_Kasus2_A11.2026.16638.cpp`](./Tugas1Kulino/PAS_Kasus2_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `986 B` | Upah regular |
+| [`PAS_Kasus3_A11.2026.16638.cpp`](./Tugas1Kulino/PAS_Kasus3_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `448 B` | Jika A lebih besar dari B, maka B dikalikan 2 |
+| [`PAS_Kasus4_A11.2026.16638.cpp`](./Tugas1Kulino/PAS_Kasus4_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `826 B` | Pemrosesan Array 1D (Min, Max, Sum, & Rata-rata) |
 | [`PAS_Kasus4_A11.2026.16638.h`](./Tugas1Kulino/PAS_Kasus4_A11.2026.16638.h) | ![Header](https://img.shields.io/badge/-Header-gray?style=flat-square) | `0 B` | Header Specification & ADT Definition |
-| [`PAS_Kasus5_A11.2026.16638.cpp`](./Tugas1Kulino/PAS_Kasus5_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `336 B` | Variabel n1 bertipe Nilai |
-| [`PAS_Kasus6_A11.2026.16638.cpp`](./Tugas1Kulino/PAS_Kasus6_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `945 B` | Struktur Data Titik Koordinat (ADT Point) |
+| [`PAS_Kasus5_A11.2026.16638.cpp`](./Tugas1Kulino/PAS_Kasus5_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `360 B` | Variabel n1 bertipe Nilai |
+| [`PAS_Kasus6_A11.2026.16638.cpp`](./Tugas1Kulino/PAS_Kasus6_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `990 B` | Struktur Data Titik Koordinat (ADT Point) |
 | [`PAS_Kasus6_A11.2026.16638.h`](./Tugas1Kulino/PAS_Kasus6_A11.2026.16638.h) | ![Header](https://img.shields.io/badge/-Header-gray?style=flat-square) | `0 B` | Header Specification & ADT Definition |
-| [`PAS_Kasus7_A11.2026.16638.cpp`](./Tugas1Kulino/PAS_Kasus7_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `584 B` | 1. Tampilkan nilai dari variabel |
+| [`PAS_Kasus7_A11.2026.16638.cpp`](./Tugas1Kulino/PAS_Kasus7_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `613 B` | 1. Tampilkan nilai dari variabel |
 
 
 ---
@@ -155,6 +156,6 @@
 
 [![Last Commit](https://img.shields.io/github/last-commit/LazenFajri/daspro_A11.2026.16638?style=flat-square&logo=github&label=Terakhir%20Diperbarui&color=007ACC)](https://github.com/LazenFajri/daspro_A11.2026.16638/commits/main)
 
-<sub>Terakhir disinkronkan otomatis pada: <b>28 September 2026, 11:44 WIB</b> • Dikelola oleh GitHub Actions</sub>
+<sub>Terakhir disinkronkan otomatis pada: <b>29 September 2026, 08:41 WIB</b> • Dikelola oleh GitHub Actions</sub>
 
 </div>
