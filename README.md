@@ -56,13 +56,8 @@
 
 | Berkas | Format | Ukuran | Deskripsi & Topik Pembahasan |
 | :--- | :---: | :---: | :--- |
-<<<<<<< HEAD
-| [`CircleLari.cpp`](./Tugas1FunRun/CircleLari.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `2.9 KB` | Rekapitulasi durasi jogging nadia 5 hari |
+| [`CircleLari.cpp`](./Tugas1FunRun/CircleLari.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `4.5 KB` | Pencatatan Data Lari Circle Nadia (ADT Struct) |
 | [`HM.cpp`](./Tugas1FunRun/HM.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `2.9 KB` | Analisis performa lari half marathon berbasis split pace |
-=======
-| [`CircleLari.cpp`](./Tugas1FunRun/CircleLari.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `4.7 KB` | Pencatatan Data Lari Circle Nadia (ADT Struct) |
-| [`HM.cpp`](./Tugas1FunRun/HM.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `3.0 KB` | Analisis performa lari half marathon berbasis split pace |
->>>>>>> 50bd393 (feat: add C++ program for tracking and calculating running data using ADT struct)
 
 ### 🏃 Dashboard Metrik Fun Run & Half Marathon
 
@@ -161,10 +156,6 @@
 
 [![Last Commit](https://img.shields.io/github/last-commit/LazenFajri/daspro_A11.2026.16638?style=flat-square&logo=github&label=Terakhir%20Diperbarui&color=007ACC)](https://github.com/LazenFajri/daspro_A11.2026.16638/commits/main)
 
-<<<<<<< HEAD
-<sub>Terakhir disinkronkan otomatis pada: <b>29 September 2026, 01:44 WIB</b> • Dikelola oleh GitHub Actions</sub>
-=======
-<sub>Terakhir disinkronkan otomatis pada: <b>30 September 2026, 12:25 WIB</b> • Dikelola oleh GitHub Actions</sub>
->>>>>>> 50bd393 (feat: add C++ program for tracking and calculating running data using ADT struct)
+<sub>Terakhir disinkronkan otomatis pada: <b>30 September 2026, 05:26 WIB</b> • Dikelola oleh GitHub Actions</sub>
 
 </div>
