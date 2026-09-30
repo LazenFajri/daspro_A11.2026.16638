@@ -39,18 +39,18 @@
 
 | No | Modul Tugas | Topik / Fokus Materi | File C++ | Dokumen | Status | Navigasi |
 | :-: | :--- | :--- | :-: | :-: | :-: | :-: |
-| `01` | **Tugas 1 — Fun Run & Half Marathon Activity Recorder** | `ADT Struct, String Parsing & Time Telemetry Aggregator` | `0` | `0` | <span style="color:#4CAF50">●</span> Selesai | [Buka Detail](#tugas1funrun) |
-| `02` | **Tugas 1 — Praktikum Algoritma & Pemrograman (Kulino)** | `Aljabar, Percabangan (If-Else), Perulangan, & Pointer Dasar` | `0` | `0` | <span style="color:#4CAF50">●</span> Selesai | [Buka Detail](#tugas1kulino) |
+| `01` | **Tugas 1 — Fun Run & Half Marathon Activity Recorder** | `ADT Struct, String Parsing & Time Telemetry Aggregator` | `0` | `0` | <span style="color:#4CAF50">●</span> Selesai | [Buka Detail](#tugas 1 fun run aritmatika dan adt) |
+| `02` | **Tugas 1 — Praktikum Algoritma & Pemrograman (Kulino)** | `Aljabar, Percabangan (If-Else), Perulangan, & Pointer Dasar` | `0` | `0` | <span style="color:#4CAF50">●</span> Selesai | [Buka Detail](#tugas 1 kulino) |
 
 ---
 
 ### 📑 Showcase & Arsip Modul
 
-<a id="tugas1funrun"></a>
+<a id="tugas 1 fun run aritmatika dan adt"></a>
 
 #### Tugas 1 — Fun Run & Half Marathon Activity Recorder
 
-> 📂 **Folder**: [`Tugas1FunRun`](./Tugas1FunRun)  
+> 📂 **Folder**: [`Tugas 1 Fun Run Aritmatika dan ADT`](./Tugas 1 Fun Run Aritmatika dan ADT)  
 > 🎯 **Topik**: ADT Struct, String Parsing & Time Telemetry Aggregator  
 > 📈 **Statistik**: `0 File C++` | `0 Dokumen PDF` | `0 Baris Kode`
 
@@ -120,11 +120,11 @@
 
 </details>
 
-<a id="tugas1kulino"></a>
+<a id="tugas 1 kulino"></a>
 
 #### Tugas 1 — Praktikum Algoritma & Pemrograman (Kulino)
 
-> 📂 **Folder**: [`Tugas1Kulino`](./Tugas1Kulino)  
+> 📂 **Folder**: [`Tugas 1 Kulino`](./Tugas 1 Kulino)  
 > 🎯 **Topik**: Aljabar, Percabangan (If-Else), Perulangan, & Pointer Dasar  
 > 📈 **Statistik**: `0 File C++` | `0 Dokumen PDF` | `0 Baris Kode`
 
@@ -135,6 +135,10 @@
 
 [![Last Commit](https://img.shields.io/github/last-commit/LazenFajri/daspro_A11.2026.16638?style=flat-square&logo=github&label=Terakhir%20Diperbarui&color=007ACC)](https://github.com/LazenFajri/daspro_A11.2026.16638/commits/main)
 
+<<<<<<< HEAD
 <sub>Terakhir disinkronkan otomatis pada: <b>30 September 2026, 06:07 WIB</b> • Dikelola oleh GitHub Actions</sub>
+=======
+<sub>Terakhir disinkronkan otomatis pada: <b>30 September 2026, 13:30 WIB</b> • Dikelola oleh GitHub Actions</sub>
+>>>>>>> d0ab422 (chore: update codebase)
 
 </div>
