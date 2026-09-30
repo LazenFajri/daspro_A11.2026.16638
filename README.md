@@ -27,9 +27,9 @@
 <div align="center">
 
 <img src="https://img.shields.io/badge/TOTAL_MODUL_TUGAS-2_Modul-black?style=for-the-badge&labelColor=1a1a1a&color=007ACC" height="38" alt="Total Modul" />
-<img src="https://img.shields.io/badge/SOURCE_FILES-9_Files-black?style=for-the-badge&labelColor=1a1a1a&color=4CAF50" height="38" alt="Source Files" />
-<img src="https://img.shields.io/badge/DOKUMEN_PDF-4_Berkas-black?style=for-the-badge&labelColor=1a1a1a&color=E91E63" height="38" alt="Dokumen PDF" />
-<img src="https://img.shields.io/badge/TOTAL_BARIS_KODE-377_LOC-black?style=for-the-badge&labelColor=1a1a1a&color=FF9800" height="38" alt="Total LOC" />
+<img src="https://img.shields.io/badge/SOURCE_FILES-0_Files-black?style=for-the-badge&labelColor=1a1a1a&color=4CAF50" height="38" alt="Source Files" />
+<img src="https://img.shields.io/badge/DOKUMEN_PDF-0_Berkas-black?style=for-the-badge&labelColor=1a1a1a&color=E91E63" height="38" alt="Dokumen PDF" />
+<img src="https://img.shields.io/badge/TOTAL_BARIS_KODE-0_LOC-black?style=for-the-badge&labelColor=1a1a1a&color=FF9800" height="38" alt="Total LOC" />
 
 </div>
 
@@ -39,8 +39,8 @@
 
 | No | Modul Tugas | Topik / Fokus Materi | File C++ | Dokumen | Status | Navigasi |
 | :-: | :--- | :--- | :-: | :-: | :-: | :-: |
-| `01` | **Tugas 1 — Fun Run & Half Marathon Activity Recorder** | `ADT Struct, String Parsing & Time Telemetry Aggregator` | `2` | `0` | <span style="color:#4CAF50">●</span> Selesai | [Buka Detail](#tugas1funrun) |
-| `02` | **Tugas 1 — Praktikum Algoritma & Pemrograman (Kulino)** | `Aljabar, Percabangan (If-Else), Perulangan, & Pointer Dasar` | `7` | `4` | <span style="color:#4CAF50">●</span> Selesai | [Buka Detail](#tugas1kulino) |
+| `01` | **Tugas 1 — Fun Run & Half Marathon Activity Recorder** | `ADT Struct, String Parsing & Time Telemetry Aggregator` | `0` | `0` | <span style="color:#4CAF50">●</span> Selesai | [Buka Detail](#tugas1funrun) |
+| `02` | **Tugas 1 — Praktikum Algoritma & Pemrograman (Kulino)** | `Aljabar, Percabangan (If-Else), Perulangan, & Pointer Dasar` | `0` | `0` | <span style="color:#4CAF50">●</span> Selesai | [Buka Detail](#tugas1kulino) |
 
 ---
 
@@ -52,12 +52,16 @@
 
 > 📂 **Folder**: [`Tugas1FunRun`](./Tugas1FunRun)  
 > 🎯 **Topik**: ADT Struct, String Parsing & Time Telemetry Aggregator  
+<<<<<<< HEAD
 > 📈 **Statistik**: `2 File C++` | `0 Dokumen PDF` | `190 Baris Kode`
 
 | Berkas | Format | Ukuran | Deskripsi & Topik Pembahasan |
 | :--- | :---: | :---: | :--- |
 | [`CircleLari.cpp`](./Tugas1FunRun/CircleLari.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `4.5 KB` | Pencatatan Data Lari Circle Nadia (ADT Struct) |
 | [`HalfMarathon.cpp`](./Tugas1FunRun/HalfMarathon.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `3.9 KB` | Rekap KM Splits Half-Marathon (ADT Struct) |
+=======
+> 📈 **Statistik**: `0 File C++` | `0 Dokumen PDF` | `0 Baris Kode`
+>>>>>>> 92778d2 (feat: add C++ source files and documentation for Tugas1 Fun Run and Kulino assignments)
 
 ### 🏃 Dashboard Metrik Fun Run & Half Marathon
 
@@ -131,6 +135,7 @@
 
 > 📂 **Folder**: [`Tugas1Kulino`](./Tugas1Kulino)  
 > 🎯 **Topik**: Aljabar, Percabangan (If-Else), Perulangan, & Pointer Dasar  
+<<<<<<< HEAD
 > 📈 **Statistik**: `7 File C++` | `4 Dokumen PDF` | `187 Baris Kode`
 
 | Berkas | Format | Ukuran | Deskripsi & Topik Pembahasan |
@@ -148,6 +153,9 @@
 | [`PAS_Kasus6_A11.2026.16638.cpp`](./Tugas1Kulino/PAS_Kasus6_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `945 B` | Struktur Data Titik Koordinat (ADT Point) |
 | [`PAS_Kasus6_A11.2026.16638.h`](./Tugas1Kulino/PAS_Kasus6_A11.2026.16638.h) | ![Header](https://img.shields.io/badge/-Header-gray?style=flat-square) | `0 B` | Header Specification & ADT Definition |
 | [`PAS_Kasus7_A11.2026.16638.cpp`](./Tugas1Kulino/PAS_Kasus7_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `584 B` | 1. Tampilkan nilai dari variabel |
+=======
+> 📈 **Statistik**: `0 File C++` | `0 Dokumen PDF` | `0 Baris Kode`
+>>>>>>> 92778d2 (feat: add C++ source files and documentation for Tugas1 Fun Run and Kulino assignments)
 
 
 ---
@@ -156,6 +164,10 @@
 
 [![Last Commit](https://img.shields.io/github/last-commit/LazenFajri/daspro_A11.2026.16638?style=flat-square&logo=github&label=Terakhir%20Diperbarui&color=007ACC)](https://github.com/LazenFajri/daspro_A11.2026.16638/commits/main)
 
+<<<<<<< HEAD
 <sub>Terakhir disinkronkan otomatis pada: <b>30 September 2026, 05:38 WIB</b> • Dikelola oleh GitHub Actions</sub>
+=======
+<sub>Terakhir disinkronkan otomatis pada: <b>30 September 2026, 13:06 WIB</b> • Dikelola oleh GitHub Actions</sub>
+>>>>>>> 92778d2 (feat: add C++ source files and documentation for Tugas1 Fun Run and Kulino assignments)
 
 </div>
