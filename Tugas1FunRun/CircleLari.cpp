@@ -1,7 +1,7 @@
 /*
     Judul     : Pencatatan Data Lari Circle Nadia (ADT Struct)
     Deskripsi : Menghitung selisih waktu/durasi harian dan rata-rata durasi
-                secara berurutan tanpa sorting.
+                secara berurutan.
     Oleh      : Muhammad Fajri Setyawan
     NIM       : A11.2026.16638
 */
