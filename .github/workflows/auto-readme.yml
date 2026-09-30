@@ -2,12 +2,11 @@ name: Auto Update README
 
 on:
   push:
-    paths:
-      - 'Tugas*/**'
-      - 'scripts/**'
-      - '.github/workflows/**'
     branches:
       - main
+    paths-ignore:
+      - 'README.md'
+      - '.gitignore'
   workflow_dispatch:
 
 permissions:
