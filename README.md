@@ -28,7 +28,7 @@
 
 <img src="https://img.shields.io/badge/TOTAL_MODUL_TUGAS-2_Modul-black?style=for-the-badge&labelColor=1a1a1a&color=007ACC" height="38" alt="Total Modul" />
 <img src="https://img.shields.io/badge/SOURCE_FILES-9_Files-black?style=for-the-badge&labelColor=1a1a1a&color=4CAF50" height="38" alt="Source Files" />
-<img src="https://img.shields.io/badge/DOKUMEN_PDF-5_Berkas-black?style=for-the-badge&labelColor=1a1a1a&color=E91E63" height="38" alt="Dokumen PDF" />
+<img src="https://img.shields.io/badge/DOKUMEN_PDF-6_Berkas-black?style=for-the-badge&labelColor=1a1a1a&color=E91E63" height="38" alt="Dokumen PDF" />
 <img src="https://img.shields.io/badge/TOTAL_BARIS_KODE-377_LOC-black?style=for-the-badge&labelColor=1a1a1a&color=FF9800" height="38" alt="Total LOC" />
 
 </div>
@@ -39,7 +39,7 @@
 
 | No | Modul Tugas | Topik / Fokus Materi | Sub-Modul | File C++ | Dokumen | Status | Navigasi |
 | :-: | :--- | :--- | :---: | :---: | :---: | :---: | :---: |
-| `01` | **Tugas 1 — Fun Run & Half Marathon Activity Recorder** | `ADT Struct, String Parsing & Time Telemetry Aggregator` | `2 Sub-Folder` | `2` | `1` | <span style="color:#4CAF50">●</span> Selesai | [Buka Detail](#tugas-1-fun-run-aritmatika-dan-adt) |
+| `01` | **Tugas 1 — Fun Run & Half Marathon Activity Recorder** | `ADT Struct, String Parsing & Time Telemetry Aggregator` | `2 Sub-Folder` | `2` | `2` | <span style="color:#4CAF50">●</span> Selesai | [Buka Detail](#tugas-1-fun-run-aritmatika-dan-adt) |
 | `02` | **Tugas 1 — Praktikum Algoritma & Pemrograman (Kulino)** | `Aljabar, Percabangan (If-Else), Perulangan, & Pointer Dasar` | `7 Kasus` | `7` | `4` | <span style="color:#4CAF50">●</span> Selesai | [Buka Detail](#tugas-1-kulino) |
 
 ---
@@ -52,14 +52,21 @@
 
 > 📂 **Folder**: [`Tugas 1 Fun Run Aritmatika dan ADT`](./Tugas%201%20Fun%20Run%20Aritmatika%20dan%20ADT)  
 > 🎯 **Topik**: ADT Struct, String Parsing & Time Telemetry Aggregator  
-> 📈 **Statistik**: `2 File C++` | `1 Dokumen PDF` | `190 Baris Kode`
-> 🗂️ **Struktur Sub-Folder**: `Laporan Data Lari Nadia` • `Rekap KM Splits Half Marathon`
+> 📈 **Statistik**: `2 File C++` | `2 Dokumen PDF` | `190 Baris Kode`
+> 🗂️ **Struktur Sub-Folder**: `Pencatatan Data Lari Nadia` • `Rekap KM Splits Half Marathon`
 
 | Sub-Folder / Modul | Berkas | Format | Ukuran | Baris | Deskripsi & Topik Pembahasan |
 | :--- | :--- | :---: | :---: | :---: | :--- |
+<<<<<<< HEAD
 | 📁 `Laporan Data Lari Nadia` | [`CircleLari.cpp`](./Tugas%201%20Fun%20Run%20Aritmatika%20dan%20ADT/Laporan%20Data%20Lari%20Nadia/CircleLari.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `4.5 KB` | `101` | Pencatatan Data Lari Circle Nadia (ADT Struct) |
 | 📁 `Rekap KM Splits Half Marathon` | [`HalfMarathon.cpp`](./Tugas%201%20Fun%20Run%20Aritmatika%20dan%20ADT/Rekap%20KM%20Splits%20Half%20Marathon/HalfMarathon.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `3.9 KB` | `89` | Rekap KM Splits Half-Marathon (ADT Struct) |
 | 📁 `Rekap KM Splits Half Marathon` | [`HalfMarathon.pdf`](./Tugas%201%20Fun%20Run%20Aritmatika%20dan%20ADT/Rekap%20KM%20Splits%20Half%20Marathon/HalfMarathon.pdf) | ![PDF](https://img.shields.io/badge/-PDF-red?style=flat-square&logo=adobeacrobatreader&logoColor=white) | `71.5 KB` | — | Dokumen Analisis & Evaluasi Split Half-Marathon |
+=======
+| 📁 `Pencatatan Data Lari Nadia` | [`CircleLari.cpp`](./Tugas%201%20Fun%20Run%20Aritmatika%20dan%20ADT/Pencatatan%20Data%20Lari%20Nadia/CircleLari.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `4.6 KB` | `101` | Pencatatan Data Lari Circle Nadia (ADT Struct) |
+| 📁 `Pencatatan Data Lari Nadia` | [`Notasi Algoritma Pencatatan Data Lari Nadia.pdf`](./Tugas%201%20Fun%20Run%20Aritmatika%20dan%20ADT/Pencatatan%20Data%20Lari%20Nadia/Notasi%20Algoritma%20Pencatatan%20Data%20Lari%20Nadia.pdf) | ![PDF](https://img.shields.io/badge/-PDF-red?style=flat-square&logo=adobeacrobatreader&logoColor=white) | `70.6 KB` | — | Dokumen Analisis / Notasi Algoritmik / Laporan |
+| 📁 `Rekap KM Splits Half Marathon` | [`HalfMarathon.cpp`](./Tugas%201%20Fun%20Run%20Aritmatika%20dan%20ADT/Rekap%20KM%20Splits%20Half%20Marathon/HalfMarathon.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `4.0 KB` | `89` | Rekap KM Splits Half-Marathon (ADT Struct) |
+| 📁 `Rekap KM Splits Half Marathon` | [`Notasi Algoritma HalfMarathon.pdf`](./Tugas%201%20Fun%20Run%20Aritmatika%20dan%20ADT/Rekap%20KM%20Splits%20Half%20Marathon/Notasi%20Algoritma%20HalfMarathon.pdf) | ![PDF](https://img.shields.io/badge/-PDF-red?style=flat-square&logo=adobeacrobatreader&logoColor=white) | `71.5 KB` | — | Dokumen Analisis & Evaluasi Split Half-Marathon |
+>>>>>>> 5d73f8f (docs: add algorithm notation PDF for Nadia running data recording task)
 
 ### 🏃 Dashboard Metrik Fun Run & Half Marathon
 
@@ -159,6 +166,10 @@
 
 [![Last Commit](https://img.shields.io/github/last-commit/LazenFajri/daspro_A11.2026.16638?style=flat-square&logo=github&label=Terakhir%20Diperbarui&color=007ACC)](https://github.com/LazenFajri/daspro_A11.2026.16638/commits/main)
 
+<<<<<<< HEAD
 <sub>Terakhir disinkronkan otomatis pada: <b>30 September 2026, 06:49 WIB</b> • Dikelola oleh GitHub Actions</sub>
+=======
+<sub>Terakhir disinkronkan otomatis pada: <b>30 September 2026, 13:57 WIB</b> • Dikelola oleh GitHub Actions</sub>
+>>>>>>> 5d73f8f (docs: add algorithm notation PDF for Nadia running data recording task)
 
 </div>
