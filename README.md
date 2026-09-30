@@ -57,9 +57,9 @@
 
 | Sub-Folder / Modul | Berkas | Format | Ukuran | Baris | Deskripsi & Topik Pembahasan |
 | :--- | :--- | :---: | :---: | :---: | :--- |
-| 📁 `Pencatatan Data Lari Nadia` | [`CircleLari.cpp`](./Tugas%201%20Fun%20Run%20Aritmatika%20dan%20ADT/Pencatatan%20Data%20Lari%20Nadia/CircleLari.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `4.6 KB` | `101` | Pencatatan Data Lari Circle Nadia (ADT Struct) |
+| 📁 `Pencatatan Data Lari Nadia` | [`CircleLari.cpp`](./Tugas%201%20Fun%20Run%20Aritmatika%20dan%20ADT/Pencatatan%20Data%20Lari%20Nadia/CircleLari.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `4.5 KB` | `101` | Pencatatan Data Lari Circle Nadia (ADT Struct) |
 | 📁 `Pencatatan Data Lari Nadia` | [`Notasi Algoritma Pencatatan Data Lari Nadia.pdf`](./Tugas%201%20Fun%20Run%20Aritmatika%20dan%20ADT/Pencatatan%20Data%20Lari%20Nadia/Notasi%20Algoritma%20Pencatatan%20Data%20Lari%20Nadia.pdf) | ![PDF](https://img.shields.io/badge/-PDF-red?style=flat-square&logo=adobeacrobatreader&logoColor=white) | `70.6 KB` | — | Dokumen Analisis / Notasi Algoritmik / Laporan |
-| 📁 `Rekap KM Splits Half Marathon` | [`HalfMarathon.cpp`](./Tugas%201%20Fun%20Run%20Aritmatika%20dan%20ADT/Rekap%20KM%20Splits%20Half%20Marathon/HalfMarathon.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `4.0 KB` | `89` | Rekap KM Splits Half-Marathon (ADT Struct) |
+| 📁 `Rekap KM Splits Half Marathon` | [`HalfMarathon.cpp`](./Tugas%201%20Fun%20Run%20Aritmatika%20dan%20ADT/Rekap%20KM%20Splits%20Half%20Marathon/HalfMarathon.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `3.9 KB` | `89` | Rekap KM Splits Half-Marathon (ADT Struct) |
 | 📁 `Rekap KM Splits Half Marathon` | [`Notasi Algoritma HalfMarathon.pdf`](./Tugas%201%20Fun%20Run%20Aritmatika%20dan%20ADT/Rekap%20KM%20Splits%20Half%20Marathon/Notasi%20Algoritma%20HalfMarathon.pdf) | ![PDF](https://img.shields.io/badge/-PDF-red?style=flat-square&logo=adobeacrobatreader&logoColor=white) | `71.5 KB` | — | Dokumen Analisis & Evaluasi Split Half-Marathon |
 
 <a id="tugas-1-kulino"></a>
@@ -73,18 +73,18 @@
 
 | Sub-Folder / Modul | Berkas | Format | Ukuran | Baris | Deskripsi & Topik Pembahasan |
 | :--- | :--- | :---: | :---: | :---: | :--- |
-| 📁 `kasus 1` | [`PAS_Kasus1_A11.2026.16638.cpp`](./Tugas%201%20Kulino/kasus%201/PAS_Kasus1_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `989 B` | `34` | Perhitungan Aljabar, Statistik Bilangan & Konversi Suhu |
-| 📁 `Kasus 2` | [`PAS_Kasus2_A11.2026.16638.cpp`](./Tugas%201%20Kulino/Kasus%202/PAS_Kasus2_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `986 B` | `29` | Kalkulasi Upah Kerja & Persentase Lembur |
+| 📁 `kasus 1` | [`PAS_Kasus1_A11.2026.16638.cpp`](./Tugas%201%20Kulino/kasus%201/PAS_Kasus1_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `949 B` | `34` | Perhitungan Aljabar, Statistik Bilangan & Konversi Suhu |
+| 📁 `Kasus 2` | [`PAS_Kasus2_A11.2026.16638.cpp`](./Tugas%201%20Kulino/Kasus%202/PAS_Kasus2_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `949 B` | `29` | Kalkulasi Upah Kerja & Persentase Lembur |
 | 📁 `Kasus 2` | [`PAS1_NotasiAlgoritmik_Kasus2_A11.2026.16638.pdf`](./Tugas%201%20Kulino/Kasus%202/PAS1_NotasiAlgoritmik_Kasus2_A11.2026.16638.pdf) | ![PDF](https://img.shields.io/badge/-PDF-red?style=flat-square&logo=adobeacrobatreader&logoColor=white) | `581.1 KB` | — | Dokumen Notasi Algoritmik — Kasus 2 |
-| 📁 `Kasus 3` | [`PAS_Kasus3_A11.2026.16638.cpp`](./Tugas%201%20Kulino/Kasus%203/PAS_Kasus3_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `448 B` | `21` | Relasi Logika Dua Bilangan & Deret Angka |
+| 📁 `Kasus 3` | [`PAS_Kasus3_A11.2026.16638.cpp`](./Tugas%201%20Kulino/Kasus%203/PAS_Kasus3_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `422 B` | `21` | Relasi Logika Dua Bilangan & Deret Angka |
 | 📁 `Kasus 3` | [`PAS1_NotasiAlgoritmik_Kasus3_A11.2026.16638.pdf`](./Tugas%201%20Kulino/Kasus%203/PAS1_NotasiAlgoritmik_Kasus3_A11.2026.16638.pdf) | ![PDF](https://img.shields.io/badge/-PDF-red?style=flat-square&logo=adobeacrobatreader&logoColor=white) | `3.1 MB` | — | Dokumen Notasi Algoritmik — Kasus 3 |
-| 📁 `Kasus 4` | [`PAS_Kasus4_A11.2026.16638.cpp`](./Tugas%201%20Kulino/Kasus%204/PAS_Kasus4_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `826 B` | `29` | Pemrosesan Array 1D (Min, Max, Sum, & Rata-rata) |
+| 📁 `Kasus 4` | [`PAS_Kasus4_A11.2026.16638.cpp`](./Tugas%201%20Kulino/Kasus%204/PAS_Kasus4_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `790 B` | `29` | Pemrosesan Array 1D (Min, Max, Sum, & Rata-rata) |
 | 📁 `Kasus 4` | [`PAS_Kasus4_A11.2026.16638.h`](./Tugas%201%20Kulino/Kasus%204/PAS_Kasus4_A11.2026.16638.h) | ![Header](https://img.shields.io/badge/-Header-gray?style=flat-square) | `0 B` | `0` | Header Specification & ADT Definition — Kasus 4 |
-| 📁 `Kasus 5` | [`PAS_Kasus5_A11.2026.16638.cpp`](./Tugas%201%20Kulino/Kasus%205/PAS_Kasus5_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `360 B` | `18` | Definisi Tipe Bentukan Struct Sederhana |
+| 📁 `Kasus 5` | [`PAS_Kasus5_A11.2026.16638.cpp`](./Tugas%201%20Kulino/Kasus%205/PAS_Kasus5_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `336 B` | `18` | Definisi Tipe Bentukan Struct Sederhana |
 | 📁 `Kasus 5` | [`PAS1_Analisis_Kasus5_A11.2026.16638.pdf`](./Tugas%201%20Kulino/Kasus%205/PAS1_Analisis_Kasus5_A11.2026.16638.pdf) | ![PDF](https://img.shields.io/badge/-PDF-red?style=flat-square&logo=adobeacrobatreader&logoColor=white) | `3.9 MB` | — | Dokumen Analisis — Kasus 5 |
-| 📁 `Kasus 6` | [`PAS_Kasus6_A11.2026.16638.cpp`](./Tugas%201%20Kulino/Kasus%206/PAS_Kasus6_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `990 B` | `36` | Struktur Data Titik Koordinat (ADT Point) |
+| 📁 `Kasus 6` | [`PAS_Kasus6_A11.2026.16638.cpp`](./Tugas%201%20Kulino/Kasus%206/PAS_Kasus6_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `945 B` | `36` | Struktur Data Titik Koordinat (ADT Point) |
 | 📁 `Kasus 6` | [`PAS_Kasus6_A11.2026.16638.h`](./Tugas%201%20Kulino/Kasus%206/PAS_Kasus6_A11.2026.16638.h) | ![Header](https://img.shields.io/badge/-Header-gray?style=flat-square) | `0 B` | `0` | Header Specification & ADT Definition — Kasus 6 |
-| 📁 `Kasus 7` | [`PAS_Kasus7_A11.2026.16638.cpp`](./Tugas%201%20Kulino/Kasus%207/PAS_Kasus7_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `613 B` | `20` | Konsep Alamat Memori & Manipulasi Variabel Pointer |
+| 📁 `Kasus 7` | [`PAS_Kasus7_A11.2026.16638.cpp`](./Tugas%201%20Kulino/Kasus%207/PAS_Kasus7_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `584 B` | `20` | Konsep Alamat Memori & Manipulasi Variabel Pointer |
 | 📁 `Kasus 7` | [`PAS1_Analisis_Kasus7_A11.2026.16638.pdf`](./Tugas%201%20Kulino/Kasus%207/PAS1_Analisis_Kasus7_A11.2026.16638.pdf) | ![PDF](https://img.shields.io/badge/-PDF-red?style=flat-square&logo=adobeacrobatreader&logoColor=white) | `3.5 MB` | — | Dokumen Analisis — Kasus 7 |
 
 
@@ -94,6 +94,6 @@
 
 [![Last Commit](https://img.shields.io/github/last-commit/LazenFajri/daspro_A11.2026.16638?style=flat-square&logo=github&label=Terakhir%20Diperbarui&color=007ACC)](https://github.com/LazenFajri/daspro_A11.2026.16638/commits/main)
 
-<sub>Terakhir disinkronkan otomatis pada: <b>30 September 2026, 14:05 WIB</b> • Dikelola oleh GitHub Actions</sub>
+<sub>Terakhir disinkronkan otomatis pada: <b>30 September 2026, 07:06 WIB</b> • Dikelola oleh GitHub Actions</sub>
 
 </div>
