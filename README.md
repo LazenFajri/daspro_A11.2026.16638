@@ -29,7 +29,7 @@
 <img src="https://img.shields.io/badge/TOTAL_MODUL_TUGAS-2_Modul-black?style=for-the-badge&labelColor=1a1a1a&color=007ACC" height="38" alt="Total Modul" />
 <img src="https://img.shields.io/badge/SOURCE_FILES-9_Files-black?style=for-the-badge&labelColor=1a1a1a&color=4CAF50" height="38" alt="Source Files" />
 <img src="https://img.shields.io/badge/DOKUMEN_PDF-4_Berkas-black?style=for-the-badge&labelColor=1a1a1a&color=E91E63" height="38" alt="Dokumen PDF" />
-<img src="https://img.shields.io/badge/TOTAL_BARIS_KODE-362_LOC-black?style=for-the-badge&labelColor=1a1a1a&color=FF9800" height="38" alt="Total LOC" />
+<img src="https://img.shields.io/badge/TOTAL_BARIS_KODE-371_LOC-black?style=for-the-badge&labelColor=1a1a1a&color=FF9800" height="38" alt="Total LOC" />
 
 </div>
 
@@ -52,12 +52,17 @@
 
 > 📂 **Folder**: [`Tugas1FunRun`](./Tugas1FunRun)  
 > 🎯 **Topik**: ADT Struct, String Parsing & Time Telemetry Aggregator  
-> 📈 **Statistik**: `2 File C++` | `0 Dokumen PDF` | `175 Baris Kode`
+> 📈 **Statistik**: `2 File C++` | `0 Dokumen PDF` | `184 Baris Kode`
 
 | Berkas | Format | Ukuran | Deskripsi & Topik Pembahasan |
 | :--- | :---: | :---: | :--- |
+<<<<<<< HEAD
 | [`CircleLari.cpp`](./Tugas1FunRun/CircleLari.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `2.9 KB` | Rekapitulasi durasi jogging nadia 5 hari |
 | [`HM.cpp`](./Tugas1FunRun/HM.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `2.9 KB` | Analisis performa lari half marathon berbasis split pace |
+=======
+| [`CircleLari.cpp`](./Tugas1FunRun/CircleLari.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `4.7 KB` | Pencatatan Data Lari Circle Nadia (ADT Struct) |
+| [`HM.cpp`](./Tugas1FunRun/HM.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `3.0 KB` | Analisis performa lari half marathon berbasis split pace |
+>>>>>>> 50bd393 (feat: add C++ program for tracking and calculating running data using ADT struct)
 
 ### 🏃 Dashboard Metrik Fun Run & Half Marathon
 
@@ -156,6 +161,10 @@
 
 [![Last Commit](https://img.shields.io/github/last-commit/LazenFajri/daspro_A11.2026.16638?style=flat-square&logo=github&label=Terakhir%20Diperbarui&color=007ACC)](https://github.com/LazenFajri/daspro_A11.2026.16638/commits/main)
 
+<<<<<<< HEAD
 <sub>Terakhir disinkronkan otomatis pada: <b>29 September 2026, 01:44 WIB</b> • Dikelola oleh GitHub Actions</sub>
+=======
+<sub>Terakhir disinkronkan otomatis pada: <b>30 September 2026, 12:25 WIB</b> • Dikelola oleh GitHub Actions</sub>
+>>>>>>> 50bd393 (feat: add C++ program for tracking and calculating running data using ADT struct)
 
 </div>

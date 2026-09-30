@@ -1,112 +1,122 @@
 /*
-judul : rekapitulasi durasi jogging nadia 5 hari
-
-kamus :
-    type CatatanJogging : <
-        hari : string,
-        tgl : string,
-        jamAwal : string,
-        jamAkhir : string,
-        jarakKm : real,
-        kondisi : string
-    >
-    aktivitas[5] : CatatanJogging
-    totalWaktuDetik, jmlHari, rataDetik : integer
-    idx, awal, akhir, selisih : integer
-
-diskripsi :
-    totalWaktuDetik <-- 0
-    jmlHari <-- 5
-
-    // hitung total detik berjalan
-    traversal (idx <-- 0 to jmlHari-1)
-        awal <-- hitungDetikTotal(aktivitas[idx].jamAwal)
-        akhir <-- hitungDetikTotal(aktivitas[idx].jamAkhir)
-        selisih <-- akhir - awal
-        totalWaktuDetik <-- totalWaktuDetik + selisih
-
-    // hitung nilai rata-rata durasi
-    rataDetik <-- totalWaktuDetik / jmlHari
-
-    // output data
-    output(totalWaktuDetik)
-    output(jmlHari)
-    output(rataDetik)
-
-Oleh : Muhammad Fajri Setyawan
-NIM  : A11.2026.16638
-*************************************************************/
+    Judul     : Pencatatan Data Lari Circle Nadia (ADT Struct)
+    Deskripsi : Menghitung selisih waktu/durasi harian dan rata-rata durasi
+                secara berurutan tanpa sorting.
+    Oleh      : Muhammad Fajri Setyawan
+    NIM       : A11.2026.16638
+*/
 
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-// kamus global
-struct CatatanJogging {
-  string hari;
-  string tgl;
-  string jamAwal;
-  string jamAkhir;
-  double jarakKm;
-  string kondisi;
+// ========================================================
+// KAMUS GLOBAL (Tipe Data Buatan & Deklarasi Fungsi)
+// ========================================================
+
+// Mendefinisikan struct untuk mengelompokkan data aktivitas lari
+struct KegiatanLari {
+  string nama;           // Menyimpan nama pelari
+  string hari;           // Hari pelaksanaan kegiatan (Senin, Rabu, Jumat)
+  string waktuBerangkat; // Jam awal lari dengan format string "HH:MM:SS"
+  string waktuFinish;    // Jam selesai lari dengan format string "HH:MM:SS"
+  double jarak;          // Jarak tempuh dalam satuan kilometer (km)
+  string catatan;        // Keterangan kondisi cuaca atau lintasan
 };
 
-// fungsi mengubah waktu string "HH:MM:SS" jadi total detik
-int hitungDetikTotal(string teksJam) {
-  int hh = stoi(teksJam.substr(0, 2));
-  int mm = stoi(teksJam.substr(3, 2));
-  int ss = stoi(teksJam.substr(6, 2));
-  return (hh * 3600) + (mm * 60) + ss;
+// Fungsi untuk mengonversi format teks "HH:MM:SS" menjadi satuan total detik
+int konversiKeDetik(string waktu) {
+  // substr(awal, panjang) digunakan untuk memotong bagian string
+  // stoi digunakan untuk mengubah teks string menjadi bilangan bulat (int)
+  int jam = stoi(waktu.substr(0, 2));   // Mengambil 2 digit pertama sebagai jam
+  int menit = stoi(waktu.substr(3, 2)); // Mengambil 2 digit kedua sebagai menit
+  int detik =
+      stoi(waktu.substr(6, 2)); // Mengambil 2 digit terakhir sebagai detik
+
+  // Rumus matematis: 1 jam = 3600 detik, 1 menit = 60 detik
+  return (jam * 3600) + (menit * 60) + detik;
 }
 
-// prosedur memformat detik jadi string MM:SS
-void cetakFormatMenitDetik(int nilaiDetik) {
-  int mnt = nilaiDetik / 60;
-  int dtk = nilaiDetik % 60;
+// Prosedur untuk mencetak angka detik ke format tampilan menit dan detik
+// (MM:SS)
+void cetakWaktu(int detik) {
+  int m = detik / 60; // Menghitung jumlah menit
+  int s = detik % 60; // Menghitung sisa detik setelah dibagi 60
 
-  if (mnt < 10)
+  // Pengecekan angka di bawah 10 agar ditambahkan angka 0 di depannya
+  if (m < 10)
     cout << "0";
-  cout << mnt << ":";
-  if (dtk < 10)
+  cout << m << ":";
+
+  if (s < 10)
     cout << "0";
-  cout << dtk;
+  cout << s;
 }
 
-// diskripsi program utama
+// ========================================================
+// DESKRIPSI (Program Utama / Eksekusi)
+// ========================================================
 int main() {
-  // kamus lokal: data 5 hari lari nadia
-  CatatanJogging aktivitas[5] = {
-      {"Senin", "1 Sep 2025", "07:10:00", "07:38:20", 2.5, "Cuaca cerah"},
-      {"Selasa", "2 Sep 2025", "07:12:30", "07:41:15", 2.5, "Sedikit ramai"},
-      {"Rabu", "3 Sep 2025", "07:05:45", "07:33:50", 2.5, "Lancar"},
-      {"Kamis", "4 Sep 2025", "07:15:20", "07:44:10", 2.5, "Sedikit hujan"},
-      {"Jumat", "5 Sep 2025", "07:08:10", "07:36:40", 2.5, "Lancar"}};
+  // Pengisian data array struct 3 hari lari Nadia sesuai modul (tanpa
+  // di-sorting)
+  KegiatanLari dataLari[3] = {
+      {"Nadia", "Senin", "07:10:00", "07:38:20", 2.5, "Cuaca cerah"},
+      {"Nadia", "Rabu", "07:12:00", "07:41:10", 2.6, "Sedikit ramai"},
+      {"Nadia", "Jumat", "07:15:30", "07:45:30", 2.5, "Lancar"}};
 
-  int totalWaktuDetik = 0;
-  int jmlHari = 5;
+  // Variabel akumulator untuk menampung total durasi seluruh hari
+  int totalDetik = 0;
+  // Variabel penyimpan total baris data yang akan diproses
+  int jumlahData = 3;
 
-  // perulangan kalkulasi akumulasi detik tanpa cetak tabel
-  for (int idx = 0; idx < jmlHari; idx++) {
-    int awal = hitungDetikTotal(aktivitas[idx].jamAwal);
-    int akhir = hitungDetikTotal(aktivitas[idx].jamAkhir);
-    int selisih = akhir - awal;
+  // Menampilkan header tabel keluaran program
+  cout << "===================================================================="
+          "====\n";
+  cout << "                    DATA LAPORAN LARI NADIA                         "
+          "    \n";
+  cout << "===================================================================="
+          "====\n";
+  cout << "Hari\tBerangkat\tFinish\t\tDurasi\t\tJarak\tCatatan\n";
+  cout << "--------------------------------------------------------------------"
+          "----\n";
 
-    totalWaktuDetik = totalWaktuDetik + selisih;
+  // Perulangan untuk membaca dan menghitung array mulai dari indeks ke-0 sampai
+  // ke-2
+  for (int i = 0; i < jumlahData; i++) {
+    // 1. Ubah waktu string berangkat dan finish ke satuan detik
+    int dtkMulai = konversiKeDetik(dataLari[i].waktuBerangkat);
+    int dtkSelesai = konversiKeDetik(dataLari[i].waktuFinish);
+
+    // 2. Hitung durasi selisih antara selesai dan berangkat
+    int durasi = dtkSelesai - dtkMulai;
+
+    // 3. Tambahkan durasi harian ke variabel total akumulasi
+    totalDetik = totalDetik + durasi;
+
+    // 4. Cetak hasil per baris data ke layar
+    cout << dataLari[i].hari << "\t" << dataLari[i].waktuBerangkat << "\t"
+         << dataLari[i].waktuFinish << "\t";
+    cetakWaktu(durasi); // Menampilkan durasi dalam format MM:SS
+    cout << "\t\t" << dataLari[i].jarak << " km\t" << dataLari[i].catatan
+         << endl;
   }
 
-  // hitung rata-rata
-  int rataDetik = totalWaktuDetik / jmlHari;
+  cout << "--------------------------------------------------------------------"
+          "----\n";
 
-  // cetak ringkasan output
-  cout << "Hasil Perhitungan Lari 5 Hari:\n";
-  cout << "- Total akumulasi waktu : " << totalWaktuDetik << " detik (";
-  cetakFormatMenitDetik(totalWaktuDetik);
+  // Menghitung rata-rata waktu (total detik dibagi jumlah hari)
+  int rataRata = totalDetik / jumlahData;
+
+  // Menampilkan hasil ringkasan perhitungan akhir
+  cout << "\nHasil Perhitungan:\n";
+  cout << "- Total waktu lari : " << totalDetik << " detik (";
+  cetakWaktu(totalDetik);
   cout << ")\n";
 
-  cout << "- Rata-rata per hari    : " << rataDetik << " detik (";
-  cetakFormatMenitDetik(rataDetik);
+  cout << "- Rata-rata lari   : " << rataRata << " detik (";
+  cetakWaktu(rataRata);
   cout << ")\n";
 
-  return 0;
+  return 0; // Mengindikasikan program berhasil berjalan normal
 }
