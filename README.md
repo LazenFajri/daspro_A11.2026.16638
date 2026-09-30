@@ -52,16 +52,7 @@
 
 > 📂 **Folder**: [`Tugas1FunRun`](./Tugas1FunRun)  
 > 🎯 **Topik**: ADT Struct, String Parsing & Time Telemetry Aggregator  
-<<<<<<< HEAD
-> 📈 **Statistik**: `2 File C++` | `0 Dokumen PDF` | `190 Baris Kode`
-
-| Berkas | Format | Ukuran | Deskripsi & Topik Pembahasan |
-| :--- | :---: | :---: | :--- |
-| [`CircleLari.cpp`](./Tugas1FunRun/CircleLari.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `4.5 KB` | Pencatatan Data Lari Circle Nadia (ADT Struct) |
-| [`HalfMarathon.cpp`](./Tugas1FunRun/HalfMarathon.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `3.9 KB` | Rekap KM Splits Half-Marathon (ADT Struct) |
-=======
 > 📈 **Statistik**: `0 File C++` | `0 Dokumen PDF` | `0 Baris Kode`
->>>>>>> 92778d2 (feat: add C++ source files and documentation for Tugas1 Fun Run and Kulino assignments)
 
 ### 🏃 Dashboard Metrik Fun Run & Half Marathon
 
@@ -135,27 +126,7 @@
 
 > 📂 **Folder**: [`Tugas1Kulino`](./Tugas1Kulino)  
 > 🎯 **Topik**: Aljabar, Percabangan (If-Else), Perulangan, & Pointer Dasar  
-<<<<<<< HEAD
-> 📈 **Statistik**: `7 File C++` | `4 Dokumen PDF` | `187 Baris Kode`
-
-| Berkas | Format | Ukuran | Deskripsi & Topik Pembahasan |
-| :--- | :---: | :---: | :--- |
-| [`PAS1_Analisis_Kasus5_A11.2026.16638.pdf`](./Tugas1Kulino/PAS1_Analisis_Kasus5_A11.2026.16638.pdf) | ![PDF](https://img.shields.io/badge/-PDF-red?style=flat-square&logo=adobeacrobatreader&logoColor=white) | `4011.8 KB` | Dokumen Analisis / Notasi Algoritmik / Laporan |
-| [`PAS1_Analisis_Kasus7_A11.2026.16638.pdf`](./Tugas1Kulino/PAS1_Analisis_Kasus7_A11.2026.16638.pdf) | ![PDF](https://img.shields.io/badge/-PDF-red?style=flat-square&logo=adobeacrobatreader&logoColor=white) | `3543.9 KB` | Dokumen Analisis / Notasi Algoritmik / Laporan |
-| [`PAS1_NotasiAlgoritmik_Kasus2_A11.2026.16638.pdf`](./Tugas1Kulino/PAS1_NotasiAlgoritmik_Kasus2_A11.2026.16638.pdf) | ![PDF](https://img.shields.io/badge/-PDF-red?style=flat-square&logo=adobeacrobatreader&logoColor=white) | `581.1 KB` | Dokumen Analisis / Notasi Algoritmik / Laporan |
-| [`PAS1_NotasiAlgoritmik_Kasus3_A11.2026.16638.pdf`](./Tugas1Kulino/PAS1_NotasiAlgoritmik_Kasus3_A11.2026.16638.pdf) | ![PDF](https://img.shields.io/badge/-PDF-red?style=flat-square&logo=adobeacrobatreader&logoColor=white) | `3192.0 KB` | Dokumen Analisis / Notasi Algoritmik / Laporan |
-| [`PAS_Kasus1_A11.2026.16638.cpp`](./Tugas1Kulino/PAS_Kasus1_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `949 B` | 1. y = a^3 + 7 |
-| [`PAS_Kasus2_A11.2026.16638.cpp`](./Tugas1Kulino/PAS_Kasus2_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `949 B` | Upah regular |
-| [`PAS_Kasus3_A11.2026.16638.cpp`](./Tugas1Kulino/PAS_Kasus3_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `422 B` | Jika A lebih besar dari B, maka B dikalikan 2 |
-| [`PAS_Kasus4_A11.2026.16638.cpp`](./Tugas1Kulino/PAS_Kasus4_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `790 B` | Pemrosesan Array 1D (Min, Max, Sum, & Rata-rata) |
-| [`PAS_Kasus4_A11.2026.16638.h`](./Tugas1Kulino/PAS_Kasus4_A11.2026.16638.h) | ![Header](https://img.shields.io/badge/-Header-gray?style=flat-square) | `0 B` | Header Specification & ADT Definition |
-| [`PAS_Kasus5_A11.2026.16638.cpp`](./Tugas1Kulino/PAS_Kasus5_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `336 B` | Variabel n1 bertipe Nilai |
-| [`PAS_Kasus6_A11.2026.16638.cpp`](./Tugas1Kulino/PAS_Kasus6_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `945 B` | Struktur Data Titik Koordinat (ADT Point) |
-| [`PAS_Kasus6_A11.2026.16638.h`](./Tugas1Kulino/PAS_Kasus6_A11.2026.16638.h) | ![Header](https://img.shields.io/badge/-Header-gray?style=flat-square) | `0 B` | Header Specification & ADT Definition |
-| [`PAS_Kasus7_A11.2026.16638.cpp`](./Tugas1Kulino/PAS_Kasus7_A11.2026.16638.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `584 B` | 1. Tampilkan nilai dari variabel |
-=======
 > 📈 **Statistik**: `0 File C++` | `0 Dokumen PDF` | `0 Baris Kode`
->>>>>>> 92778d2 (feat: add C++ source files and documentation for Tugas1 Fun Run and Kulino assignments)
 
 
 ---
@@ -164,10 +135,6 @@
 
 [![Last Commit](https://img.shields.io/github/last-commit/LazenFajri/daspro_A11.2026.16638?style=flat-square&logo=github&label=Terakhir%20Diperbarui&color=007ACC)](https://github.com/LazenFajri/daspro_A11.2026.16638/commits/main)
 
-<<<<<<< HEAD
-<sub>Terakhir disinkronkan otomatis pada: <b>30 September 2026, 05:38 WIB</b> • Dikelola oleh GitHub Actions</sub>
-=======
-<sub>Terakhir disinkronkan otomatis pada: <b>30 September 2026, 13:06 WIB</b> • Dikelola oleh GitHub Actions</sub>
->>>>>>> 92778d2 (feat: add C++ source files and documentation for Tugas1 Fun Run and Kulino assignments)
+<sub>Terakhir disinkronkan otomatis pada: <b>30 September 2026, 06:07 WIB</b> • Dikelola oleh GitHub Actions</sub>
 
 </div>
