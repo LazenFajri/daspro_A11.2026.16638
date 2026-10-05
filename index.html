@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DASPRO Activity & Assignment Hub - Repositori Tugas & Portofolio Pemrograman C++ Muhammad Fajri Setyawan (NIM: A11.2026.16638), Teknik Informatika UDINUS.">
+    <meta name="author" content="Muhammad Fajri Setyawan">
+    <title>DASPRO Assignment Hub & Explorer • Muhammad Fajri Setyawan (A11.2026.16638)</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+    <!-- Ambient Glowing Lights -->
+    <div class="ambient-glow">
+        <div class="glow-circle-1"></div>
+        <div class="glow-circle-2"></div>
+        <div class="glow-circle-3"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="app-container">
+
+        <!-- Navigation Bar -->
+        <header class="navbar">
+            <a href="#" class="nav-brand">
+                <div class="brand-icon">
+                    <span>⚡</span>
+                </div>
+                <div class="brand-info">
+                    <div class="brand-title">
+                        DASPRO Hub
+                        <span class="status-badge">
+                            <span class="pulse-dot"></span>
+                            Semester Aktif
+                        </span>
+                    </div>
+                    <div class="brand-subtitle">UDINUS • A11.2026.16638</div>
+                </div>
+            </a>
+
+            <div class="nav-controls">
+                <button class="nav-search-trigger" id="navSearchTrigger" title="Cari tugas (Tekan Ctrl + K atau /)">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <span>Cari tugas...</span>
+                    <span class="kbd">Ctrl K</span>
+                </button>
+
+                <a href="https://github.com/LazenFajri/daspro_A11.2026.16638" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" title="Buka Repositori GitHub">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                    <span>GitHub</span>
+                </a>
+
+                <button class="btn-icon" id="themeToggleBtn" title="Ganti Tema (Dark / Light)">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <!-- Left: Student Profile Card -->
+            <div class="hero-profile-card">
+                <div>
+                    <div class="profile-header">
+                        <div class="profile-avatar">MF</div>
+                        <div class="profile-meta">
+                            <h1 class="profile-name">Muhammad Fajri Setyawan</h1>
+                            <div class="profile-badges">
+                                <span class="badge-tag badge-nim" id="nimCopyBadge" title="Klik untuk menyalin NIM">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                    A11.2026.16638
+                                </span>
+                                <span class="badge-tag badge-prodi">Teknik Informatika</span>
+                                <span class="badge-tag">C++17</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+                        Portal Interaktif Penelusuran & Verifikasi Tugas Pemrograman C++ (Dasar Pemrograman). Dilengkapi live syntax highlighter, dokumen notasi algoritmik, serta modul pengujian tugas.
+                    </div>
+                </div>
+
+                <div class="profile-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Institusi</span>
+                        <span class="detail-value">Univ. Dian Nuswantoro</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Mata Kuliah</span>
+                        <span class="detail-value">Dasar Pemrograman (DASPRO)</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Status Kurikulum</span>
+                        <span class="detail-value" style="color: var(--brand-emerald);">100% Modul Tuntas</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Kompiler</span>
+                        <span class="detail-value">GCC / MSYS2 (C++17)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Stats Grid -->
+            <div class="hero-stats-grid">
+                <div class="stat-card">
+                    <div class="stat-card-top">
+                        <span class="stat-label">Modul Tugas</span>
+                        <div class="stat-icon blue">📁</div>
+                    </div>
+                    <div class="stat-value">4</div>
+                    <div class="stat-sub">Kurikulum Praktikum</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-top">
+                        <span class="stat-label">File Sumber C++</span>
+                        <div class="stat-icon green">⚡</div>
+                    </div>
+                    <div class="stat-value">32</div>
+                    <div class="stat-sub">100% Selesai & Teruji</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-top">
+                        <span class="stat-label">Dokumen PDF</span>
+                        <div class="stat-icon purple">📑</div>
+                    </div>
+                    <div class="stat-value">29</div>
+                    <div class="stat-sub">Notasi & Laporan</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-top">
+                        <span class="stat-label">Total Baris Kode</span>
+                        <div class="stat-icon amber">💻</div>
+                    </div>
+                    <div class="stat-value">2,168+</div>
+                    <div class="stat-sub">Clean & Structured LOC</div>
+                </div>
+
+                <div class="stat-card featured">
+                    <div class="stat-card-top">
+                        <span class="stat-label" style="font-weight: 700; color: var(--text-primary);">
+                            Progres Kelulusan Tugas DASPRO
+                        </span>
+                        <span style="font-size: 0.85rem; font-weight: 800; color: var(--brand-emerald); font-family: var(--font-mono);">
+                            100% SELESAI
+                        </span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--text-muted); margin-top: 0.4rem;">
+                        <span>32 dari 32 tugas terarsip rapi</span>
+                        <span>Siap Dievaluasi Dosen / Asdos</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- View Switcher Navigation Tabs -->
+        <nav class="main-view-nav" aria-label="Navigasi Utama">
+            <button class="view-tab-btn active" data-view="explorer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                <span>Katalog Tugas</span>
+                <span class="tab-badge">32</span>
+            </button>
+
+            <button class="view-tab-btn" data-view="review">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 11 12 14 22 4"></polyline>
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                </svg>
+                <span>Cek Tugas & Review</span>
+                <span class="tab-badge" id="reviewProgressPctLabel">0%</span>
+            </button>
+
+            <button class="view-tab-btn" data-view="pdf">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                <span>Dokumen PDF</span>
+                <span class="tab-badge">29</span>
+            </button>
+
+            <button class="view-tab-btn" data-view="analytics">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+                <span>Statistik & Modul</span>
+            </button>
+        </nav>
+
+        <!-- ===================================================================
+             VIEW 1: EXPLORER / KATALOG TUGAS
+             =================================================================== -->
+        <main id="viewExplorer">
+            <!-- Filter Toolbar -->
+            <div class="filter-toolbar">
+                <div class="toolbar-top-row">
+                    <div class="search-box-wrapper">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="searchInput" class="search-input" placeholder="Cari nama kasus, topik, algoritma, atau kata kunci (misal: struct, pointer, lari, sepatu)...">
+                        <button id="searchClearBtn" class="search-clear-btn" title="Hapus pencarian">✕</button>
+                    </div>
+
+                    <div class="toolbar-select-group">
+                        <select id="moduleFilterSelect" class="select-custom" title="Filter Berdasarkan Modul">
+                            <option value="all">Semua Modul</option>
+                            <option value="Daspro Latihan">Daspro Latihan</option>
+                            <option value="Tugas 1 Fun Run Aritmatika dan ADT">Tugas 1 Fun Run</option>
+                            <option value="Tugas 1 Kulino">Tugas 1 Kulino</option>
+                            <option value="Tugas 2 Kondisi, Loop, Array">Tugas 2 Kondisi, Loop, Array</option>
+                        </select>
+
+                        <select id="fileTypeSelect" class="select-custom" title="Filter Tipe Berkas">
+                            <option value="all">Semua Berkas</option>
+                            <option value="cpp">Hanya C++ (.cpp)</option>
+                            <option value="pdf">Hanya PDF (.pdf)</option>
+                        </select>
+
+                        <select id="sortSelect" class="select-custom" title="Urutkan Tampilan">
+                            <option value="default">Urutan Kurikulum</option>
+                            <option value="loc_desc">Baris Kode Terbanyak (LOC ↓)</option>
+                            <option value="name_asc">Nama Judul (A - Z)</option>
+                        </select>
+
+                        <select id="reviewFilterSelect" class="select-custom" title="Status Pemeriksaan">
+                            <option value="all">Semua Status</option>
+                            <option value="reviewed">Sudah Diperiksa</option>
+                            <option value="unreviewed">Belum Diperiksa</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Module Pills -->
+                <div class="module-pills-row" id="modulePillsContainer">
+                    <!-- Dynamic Pills -->
+                </div>
+            </div>
+
+            <!-- Section Header -->
+            <div class="section-header">
+                <div class="section-title-wrap">
+                    <h2 class="section-title">Daftar Modul & Praktikum C++</h2>
+                    <span class="section-counter" id="assignmentCountLabel">32 Tugas</span>
+                </div>
+                <div style="font-size: 0.78rem; color: var(--text-muted);">
+                    Klik pada kartu untuk membaca kode sumber lengkap & simulasi
+                </div>
+            </div>
+
+            <!-- Assignment Cards Grid -->
+            <div class="assignment-grid" id="assignmentGrid">
+                <!-- Generated by app.js -->
+            </div>
+        </main>
+
+        <!-- ===================================================================
+             VIEW 2: CEK TUGAS & REVIEW CENTER (Interactive Verification)
+             =================================================================== -->
+        <section id="viewReview" style="display: none;">
+            <div class="review-dashboard-header">
+                <div class="review-summary-left">
+                    <h2>📋 Dashboard Verifikasi & Pemeriksaan Tugas</h2>
+                    <p>
+                        Panel interaktif untuk dosen, asisten dosen, maupun mahasiswa dalam memvalidasi seluruh berkas praktikum C++. Status centang, penilaian nilai skor, dan catatan tersimpan secara otomatis di peramban (localStorage).
+                    </p>
+                    <div class="review-progress-card">
+                        <div class="review-progress-top">
+                            <span class="review-progress-title">Progres Pemeriksaan Portofolio</span>
+                            <span class="review-progress-pct" id="reviewProgressCountLabel">0 / 32 Tugas Terverifikasi</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" id="reviewProgressBarFill" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-actions-right">
+                    <button class="btn btn-primary" id="exportReviewBtn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        <span>Ekspor Laporan Review (Salin Ringkasan)</span>
+                    </button>
+
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button class="btn btn-secondary btn-sm" id="markAllReviewedBtn" style="flex: 1;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Tandai Semua Selesai
+                        </button>
+                        <button class="btn btn-ghost btn-sm" id="resetReviewBtn">
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Table -->
+            <div class="review-table-container">
+                <table class="review-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 50px;">No</th>
+                            <th>Nama Tugas & File C++</th>
+                            <th>Modul</th>
+                            <th>Baris</th>
+                            <th style="width: 150px;">Status Pemeriksaan</th>
+                            <th style="width: 80px;">Skor</th>
+                            <th>Catatan Evaluasi / Feedback</th>
+                            <th style="width: 100px;">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reviewTableBody">
+                        <!-- Generated by app.js -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             VIEW 3: PDF DOCUMENT HUB
+             =================================================================== -->
+        <section id="viewPdf" style="display: none;">
+            <div class="section-header">
+                <div class="section-title-wrap">
+                    <h2 class="section-title">Katalog Dokumen & Notasi Algoritmik</h2>
+                    <span class="section-counter">29 Berkas PDF</span>
+                </div>
+                <div style="font-size: 0.78rem; color: var(--text-muted);">
+                    Arsip lengkap berkas analisis, deskripsi kasus, dan notasi algoritma
+                </div>
+            </div>
+
+            <div class="pdf-catalog-grid" id="pdfGrid">
+                <!-- Generated by app.js -->
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             VIEW 4: MODULES & ANALYTICS
+             =================================================================== -->
+        <section id="viewAnalytics" style="display: none;">
+            <div class="section-header">
+                <div class="section-title-wrap">
+                    <h2 class="section-title">Distribusi Modul Praktikum</h2>
+                </div>
+            </div>
+
+            <div class="module-overview-grid" id="moduleAnalyticsContainer">
+                <!-- Generated by app.js -->
+            </div>
+
+            <div class="analysis-card">
+                <div class="analysis-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2">
+                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                        <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                    </svg>
+                    <span>Peta Konsep & Topik Pemrograman C++</span>
+                </div>
+                <div class="analysis-content" style="margin-top: 0.75rem;">
+                    <p style="margin-bottom: 1rem;">
+                        Klik pada salah satu topik di bawah untuk memfilter seluruh tugas yang mengimplementasikan materi tersebut:
+                    </p>
+                    <div id="conceptCloudContainer">
+                        <!-- Generated by app.js -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="footer-links">
+                <a href="https://github.com/LazenFajri" target="_blank" rel="noopener noreferrer">Profil GitHub</a>
+                <span>•</span>
+                <a href="https://github.com/LazenFajri/daspro_A11.2026.16638" target="_blank" rel="noopener noreferrer">Repositori Daspro</a>
+                <span>•</span>
+                <a href="https://dinus.ac.id" target="_blank" rel="noopener noreferrer">UDINUS Semarang</a>
+            </div>
+            <div>
+                Dibuat untuk portofolio mata kuliah <strong>Dasar Pemrograman (DASPRO)</strong> • C++17 Standard
+            </div>
+            <div style="margin-top: 0.35rem; font-size: 0.72rem; color: var(--text-muted);">
+                Muhammad Fajri Setyawan (NIM: A11.2026.16638) • Teknik Informatika UDINUS
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- =======================================================================
+         ULTIMATE CODE & ASSIGNMENT MODAL
+         ======================================================================= -->
+    <div class="modal-backdrop" id="taskModal" aria-modal="true" role="dialog">
+        <div class="modal-window">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <div class="modal-header-left">
+                    <div class="modal-breadcrumbs" id="modalBreadcrumb">
+                        <span>Modul</span> / <span>Subfolder</span> / <span>Berkas.cpp</span>
+                    </div>
+                    <h3 class="modal-title" id="modalTitle">Judul Tugas</h3>
+                </div>
+
+                <div class="modal-header-actions">
+                    <button class="btn btn-secondary btn-sm" id="modalCopyCodeBtn" title="Salin seluruh kode C++">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        <span>Salin Kode</span>
+                    </button>
+
+                    <button class="btn btn-secondary btn-sm" id="modalDownloadBtn" title="Unduh file .cpp">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        <span>Unduh .cpp</span>
+                    </button>
+
+                    <a id="modalGithubLink" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm" title="Lihat di GitHub">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                    </a>
+
+                    <button class="btn-icon" id="modalCloseBtn" title="Tutup (Esc)">✕</button>
+                </div>
+            </div>
+
+            <!-- Modal Tab Bar -->
+            <div class="modal-nav-tabs">
+                <button class="modal-tab-btn active" data-tab="code">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    <span>Kode Sumber C++</span>
+                </button>
+                <button class="modal-tab-btn" data-tab="analysis">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    <span>Analisis Algoritma</span>
+                </button>
+                <button class="modal-tab-btn" data-tab="terminal">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                    <span>Simulasi Terminal</span>
+                </button>
+                <button class="modal-tab-btn" data-tab="docs">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                    <span>Dokumen Terkait</span>
+                </button>
+                <button class="modal-tab-btn" data-tab="review">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                    <span>Status Verifikasi & Nilai</span>
+                </button>
+            </div>
+
+            <!-- Modal Content Body -->
+            <div class="modal-body">
+                <!-- Panel 1: Code Viewer -->
+                <div class="tab-panel active" id="modalCodePanel">
+                    <div class="code-viewer-container">
+                        <div class="code-viewer-header">
+                            <div class="code-file-label">
+                                <span style="color: #38bdf8;">●</span> C++17 Source File
+                            </div>
+                            <div style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">
+                                Standar ISO/IEC 14882:2017
+                            </div>
+                        </div>
+                        <div class="code-viewer-scroll" id="modalCodeWrapper">
+                            <!-- Injected by app.js with renderHighlightedCpp -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 2: Analysis & Concepts -->
+                <div class="tab-panel" id="modalAnalysisPanel">
+                    <div id="modalAnalysisContent">
+                        <!-- Injected by app.js -->
+                    </div>
+                </div>
+
+                <!-- Panel 3: Terminal Simulation -->
+                <div class="tab-panel" id="modalTerminalPanel">
+                    <div class="terminal-box">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="terminal-dot red"></span>
+                                <span class="terminal-dot yellow"></span>
+                                <span class="terminal-dot green"></span>
+                            </div>
+                            <div class="terminal-title">bash - c++ runner simulation</div>
+                            <div style="font-size: 0.7rem; color: #64748b;">x86_64-w64-mingw32</div>
+                        </div>
+                        <div class="terminal-body" id="modalTerminalBody">
+                            <!-- Terminal text -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 4: Documents -->
+                <div class="tab-panel" id="modalDocsPanel">
+                    <div id="modalDocsContent">
+                        <!-- Injected by app.js -->
+                    </div>
+                </div>
+
+                <!-- Panel 5: Review & Grading -->
+                <div class="tab-panel" id="modalReviewPanel">
+                    <div class="analysis-card">
+                        <div class="analysis-title">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Verifikasi Kasus & Evaluasi Tugas
+                        </div>
+                        <div class="analysis-content">
+                            <p style="margin-bottom: 1.25rem;">
+                                Berikan checklist verifikasi dan catatan evaluasi untuk tugas ini. Data akan langsung tersimpan di peramban.
+                            </p>
+
+                            <div style="display: flex; flex-direction: column; gap: 1rem; max-width: 500px;">
+                                <label style="display: flex; align-items: center; gap: 0.65rem; cursor: pointer;">
+                                    <input type="checkbox" id="modalReviewCheck" style="width: 20px; height: 20px; accent-color: var(--brand-emerald);">
+                                    <span style="font-weight: 700; font-size: 0.95rem; color: var(--text-primary);">
+                                        Tandai Kasus Ini Sudah Selesai Diperiksa & Lolos Uji
+                                    </span>
+                                </label>
+
+                                <div>
+                                    <label style="display: block; font-size: 0.78rem; font-weight: 600; color: var(--text-muted); margin-bottom: 0.35rem;">
+                                        NILAI / SKOR (0 - 100):
+                                    </label>
+                                    <input type="text" id="modalReviewScore" class="score-input" style="width: 120px; text-align: left; padding: 0.5rem 0.75rem;" placeholder="100">
+                                </div>
+
+                                <div>
+                                    <label style="display: block; font-size: 0.78rem; font-weight: 600; color: var(--text-muted); margin-bottom: 0.35rem;">
+                                        CATATAN EVALUASI / FEEDBACK DOSEN / ASDOS:
+                                    </label>
+                                    <textarea id="modalReviewNotes" class="review-notes-input" style="min-height: 90px; padding: 0.75rem;" placeholder="Tulis catatan penilaian kode di sini..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="assets/js/prism.js"></script>
+    <script src="assets/js/assignments.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

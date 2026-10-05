@@ -328,6 +328,7 @@ def generate_markdown(tasks):
     md.append('### **Repositori Tugas & Portofolio Pemrograman C++**\n')
     md.append(f'[![Language](https://img.shields.io/badge/Language-{PROFILE["language"]}-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://isocpp.org/)')
     md.append(f'[![NIM](https://img.shields.io/badge/NIM-{PROFILE["nim"]}-black?style=for-the-badge&logo=github&logoColor=white)](https://github.com/{PROFILE["github_user"]})')
+    md.append(f'[![Web Portal](https://img.shields.io/badge/Web_Portal-Interactive_Explorer-6366F1?style=for-the-badge&logo=googlechrome&logoColor=white)](https://{PROFILE["github_user"]}.github.io/{PROFILE["repo_name"]}/)')
     md.append('[![Automated](https://img.shields.io/badge/Auto--Sync-GitHub_Actions-brightgreen?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/)')
     md.append(f'[![Status](https://img.shields.io/badge/Status-Active_Semester-222222?style=for-the-badge)](https://github.com/{PROFILE["github_user"]}/{PROFILE["repo_name"]})\n')
     md.append('</div>\n')
@@ -340,6 +341,11 @@ def generate_markdown(tasks):
     md.append(f'> **Program Studi** : {PROFILE["prodi"]}  ')
     md.append(f'> **Institusi** : {PROFILE["univ"]}  ')
     md.append(f'> **Mata Kuliah** : {PROFILE["course"]}  \n')
+    md.append('---\n')
+    
+    # Web Portal Section
+    md.append('### 🌐 Web Portal & Penelusuran Tugas Interaktif\n')
+    md.append(f'> 💡 **Ingin mengecek atau meninjau seluruh tugas secara visual?**  \n> Repositori ini telah dilengkapi portal web interaktif berdesain modern (Dark/Light mode, live syntax highlighting, serta checklist evaluasi nilai):\n> \n> 🔗 **Buka Website Online**: [https://{PROFILE["github_user"]}.github.io/{PROFILE["repo_name"]}/](https://{PROFILE["github_user"]}.github.io/{PROFILE["repo_name"]}/)  \n> 💻 **Buka Lokal di Komputer**: Jalankan `serve_website.bat` atau buka berkas [`index.html`](./index.html) langsung di browser Anda.\n')
     md.append('---\n')
     
     # 3. Dynamic Stats Dashboard Badges
@@ -475,8 +481,13 @@ def main():
     with open(readme_path, "w", encoding="utf-8") as f:
         f.write(markdown_content)
         
-    print(f"✅ README.md berhasil diperbarui di: {readme_path}")
-    
+    # Sinkronisasi data Web Portal assignments.js
+    try:
+        from generate_web_data import main as sync_web_data
+        sync_web_data()
+    except Exception as e:
+        print(f"⚠️ Gagal memperbarui data web portal: {e}")
+
     # Pasang git pre-commit hook otomatis
     setup_git_pre_commit_hook()
 
