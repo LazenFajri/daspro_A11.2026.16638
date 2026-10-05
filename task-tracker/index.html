@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASPRO Task Tracker — Muhammad Fajri Setyawan</title>
+    <meta name="description" content="Dashboard pengecekan tugas Dasar Pemrograman (DASPRO) — Teknik Informatika UDINUS, NIM A11.2026.16638">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-glow bg-glow-3"></div>
+
+    <!-- Floating Particles -->
+    <div id="particles"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-group">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 40 40" fill="none">
+                            <rect x="2" y="2" width="36" height="36" rx="10" stroke="url(#logoGrad)" stroke-width="2.5"/>
+                            <path d="M12 14h16M12 20h12M12 26h8" stroke="url(#logoGrad)" stroke-width="2.5" stroke-linecap="round"/>
+                            <circle cx="30" cy="28" r="4" fill="url(#logoGrad)"/>
+                            <path d="M28.5 28l1 1 2-2" stroke="#0a0a0f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <defs>
+                                <linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40">
+                                    <stop stop-color="#6366f1"/>
+                                    <stop offset="1" stop-color="#a78bfa"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="logo-text">DASPRO <span class="accent">Tracker</span></h1>
+                        <p class="logo-sub">Task & Assignment Dashboard</p>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="student-badge">
+                        <div class="avatar">MF</div>
+                        <div class="student-info">
+                            <span class="student-name">Muhammad Fajri S.</span>
+                            <span class="student-nim">A11.2026.16638</span>
+                        </div>
+                    </div>
+                    <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+                        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                        </svg>
+                        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+
+            <!-- Stats Overview -->
+            <section class="stats-section" id="stats">
+                <div class="stats-grid">
+                    <div class="stat-card stat-total">
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" data-target="4">0</span>
+                            <span class="stat-label">Total Modul</span>
+                        </div>
+                        <div class="stat-ring">
+                            <svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="26" fill="none" stroke="currentColor" opacity="0.1" stroke-width="4"/><circle class="ring-progress" cx="30" cy="30" r="26" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-dasharray="163.36" stroke-dashoffset="0"/></svg>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-files">
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" data-target="32">0</span>
+                            <span class="stat-label">Source Files</span>
+                        </div>
+                        <div class="stat-ring">
+                            <svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="26" fill="none" stroke="currentColor" opacity="0.1" stroke-width="4"/><circle class="ring-progress" cx="30" cy="30" r="26" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-dasharray="163.36" stroke-dashoffset="0"/></svg>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-docs">
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" data-target="29">0</span>
+                            <span class="stat-label">Dokumen PDF</span>
+                        </div>
+                        <div class="stat-ring">
+                            <svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="26" fill="none" stroke="currentColor" opacity="0.1" stroke-width="4"/><circle class="ring-progress" cx="30" cy="30" r="26" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-dasharray="163.36" stroke-dashoffset="0"/></svg>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-loc">
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" data-target="2168">0</span>
+                            <span class="stat-label">Baris Kode</span>
+                        </div>
+                        <div class="stat-ring">
+                            <svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="26" fill="none" stroke="currentColor" opacity="0.1" stroke-width="4"/><circle class="ring-progress" cx="30" cy="30" r="26" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-dasharray="163.36" stroke-dashoffset="0"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Progress Bar -->
+            <section class="progress-section">
+                <div class="progress-header">
+                    <h2 class="section-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Progress Keseluruhan
+                    </h2>
+                    <span class="progress-percent" id="overallPercent">0%</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="overallProgress">
+                        <div class="progress-glow"></div>
+                    </div>
+                </div>
+                <p class="progress-detail">
+                    <span id="completedCount">0</span> dari <span id="totalCount">0</span> sub-tugas telah diselesaikan
+                </p>
+            </section>
+
+            <!-- Filter / Search -->
+            <section class="filter-section">
+                <div class="search-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                    <input type="text" id="searchInput" placeholder="Cari tugas, topik, atau kasus..." autocomplete="off">
+                    <kbd class="search-shortcut">Ctrl+K</kbd>
+                </div>
+                <div class="filter-pills">
+                    <button class="pill active" data-filter="all">
+                        <span class="pill-dot"></span>Semua
+                    </button>
+                    <button class="pill" data-filter="selesai">
+                        <span class="pill-dot done"></span>Selesai
+                    </button>
+                    <button class="pill" data-filter="proses">
+                        <span class="pill-dot progress"></span>Dalam Proses
+                    </button>
+                    <button class="pill" data-filter="belum">
+                        <span class="pill-dot pending"></span>Belum Mulai
+                    </button>
+                </div>
+            </section>
+
+            <!-- Task Cards -->
+            <section class="tasks-section" id="tasks">
+
+                <!-- Modul 1: Daspro Latihan -->
+                <div class="task-card" data-status="selesai" data-module="1">
+                    <div class="card-header">
+                        <div class="card-badge modul-1">Modul 01</div>
+                        <div class="card-status done">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            Selesai
+                        </div>
+                    </div>
+                    <h3 class="card-title">Daspro Latihan</h3>
+                    <p class="card-topic">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                        C++ Algorithm & Implementation
+                    </p>
+                    <div class="card-stats">
+                        <div class="mini-stat">
+                            <span class="mini-num">14</span>
+                            <span class="mini-label">File C++</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="mini-num">14</span>
+                            <span class="mini-label">Dokumen</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="mini-num">1021</span>
+                            <span class="mini-label">LOC</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="mini-num">16</span>
+                            <span class="mini-label">Sub-Folder</span>
+                        </div>
+                    </div>
+                    <div class="card-progress">
+                        <div class="card-progress-bar" style="--progress: 100%"></div>
+                    </div>
+                    <button class="card-expand" aria-label="Lihat Detail" onclick="toggleExpand(this)">
+                        <span>Lihat Detail</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="card-details">
+                        <div class="details-grid">
+                            <div class="detail-item done" data-sub="Kasus 1 Data Sepatu Sederhana">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 1 — Data Sepatu Sederhana</span>
+                                    <span class="detail-meta">48 LOC • Data Sepatu Sederhana.cpp</span>
+                                </div>
+                            </div>
+                            <div class="detail-item done" data-sub="Kasus 2 Input Data Sepatu Interaktif">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 2 — Input Data Sepatu Interaktif</span>
+                                    <span class="detail-meta">55 LOC • Input Data Sepatu Interaktif.cpp</span>
+                                </div>
+                            </div>
+                            <div class="detail-item done" data-sub="Kasus 3 Pencatatan Spesifikasi Lengkap Sepatu">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 3 — Pencatatan Spesifikasi Lengkap Sepatu</span>
+                                    <span class="detail-meta">66 LOC • Pencatatan Spesifikasi Lengkap Sepatu.cpp</span>
+                                </div>
+                            </div>
+                            <div class="detail-item done" data-sub="Kasus 4 Kalkulasi Nilai Total Aset Stok Sepatu">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 4 — Kalkulasi Nilai Total Aset Stok</span>
+                                    <span class="detail-meta">54 LOC • Kalkulasi Nilai Total Aset Stok Sepatu.cpp</span>
+                                </div>
+                            </div>
+                            <div class="detail-item done" data-sub="Kasus 5 Infografis Koleksi Kendaraan">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 5 — Infografis Koleksi Kendaraan (ADT & Array)</span>
+                                    <span class="detail-meta">122 LOC • Koleksi Kendaraan Mahasiswa ADT dan Array.cpp</span>
+                                </div>
+                            </div>
+                            <div class="detail-item done" data-sub="Kasus 6 Inventaris Barang Pribadi">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 6 — Inventaris Barang Pribadi Mahasiswa</span>
+                                    <span class="detail-meta">116 LOC • Inventaris Barang Pribadi Mahasiswa.cpp</span>
+                                </div>
+                            </div>
+                            <div class="detail-item done" data-sub="Kasus 7 Estimasi Tinggi Gedung">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 7 — Estimasi Tinggi Gedung UDINUS</span>
+                                    <span class="detail-meta">102 LOC • Gedung Udinus.cpp</span>
+                                </div>
+                            </div>
+                            <div class="detail-item done" data-sub="Kasus 1 Data KTP">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 8 — Data KTP</span>
+                                    <span class="detail-meta">63 LOC • Data KTP.cpp</span>
+                                </div>
+                            </div>
+                            <div class="detail-item done" data-sub="Kasus 2 Perhitungan Volume Balok">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 9 — Perhitungan Volume Balok</span>
+                                    <span class="detail-meta">44 LOC • Perhitungan Volume Balok.cpp</span>
+                                </div>
+                            </div>
+                            <div class="detail-item done" data-sub="Kasus 3 Rata Rata Volume Dua Kardus">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 10 — Rata-Rata Volume Dua Kardus</span>
+                                    <span class="detail-meta">68 LOC • Rata Rata Volume Dua Kardus.cpp</span>
+                                </div>
+                            </div>
+                            <div class="detail-item done" data-sub="Kasus 4 Fungsi Matematika Persamaan Kubik">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 11 — Fungsi Matematika Persamaan Kubik</span>
+                                    <span class="detail-meta">37 LOC • Fungsi Matematika Persamaan Kubik.cpp</span>
+                                </div>
+                            </div>
+                            <div class="detail-item done" data-sub="Kasus 5 Kepemilikan Sepatu Mahasiswa">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 12 — Kepemilikan Sepatu Mahasiswa</span>
+                                    <span class="detail-meta">96 LOC • Kepemilikan Sepatu Mahasiswa.cpp</span>
+                                </div>
+                            </div>
+                            <div class="detail-item done" data-sub="Kasus 6 Perbandingan Dan Pengurutan 3 Bilangan">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 13 — Perbandingan & Pengurutan 3 Bilangan</span>
+                                    <span class="detail-meta">77 LOC • Perbandingan Dan Pengurutan 3 Bilangan.cpp</span>
+                                </div>
+                            </div>
+                            <div class="detail-item done" data-sub="Kasus 7 Konversi Angka Menjadi Kata">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 14 — Konversi Angka Menjadi Kata</span>
+                                    <span class="detail-meta">73 LOC • Konversi Angka Menjadi Kata.cpp</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modul 2: Tugas 1 Fun Run -->
+                <div class="task-card" data-status="selesai" data-module="2">
+                    <div class="card-header">
+                        <div class="card-badge modul-2">Modul 02</div>
+                        <div class="card-status done">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            Selesai
+                        </div>
+                    </div>
+                    <h3 class="card-title">Tugas 1 — Fun Run & Half Marathon Activity Recorder</h3>
+                    <p class="card-topic">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                        ADT Struct, String Parsing & Time Telemetry Aggregator
+                    </p>
+                    <div class="card-stats">
+                        <div class="mini-stat">
+                            <span class="mini-num">2</span>
+                            <span class="mini-label">File C++</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="mini-num">2</span>
+                            <span class="mini-label">Dokumen</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="mini-num">190</span>
+                            <span class="mini-label">LOC</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="mini-num">2</span>
+                            <span class="mini-label">Kasus</span>
+                        </div>
+                    </div>
+                    <div class="card-progress">
+                        <div class="card-progress-bar" style="--progress: 100%"></div>
+                    </div>
+                    <button class="card-expand" aria-label="Lihat Detail" onclick="toggleExpand(this)">
+                        <span>Lihat Detail</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="card-details">
+                        <div class="details-grid">
+                            <div class="detail-item done" data-sub="Kasus 1 Pencatatan Data Lari Nadia">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 1 — Pencatatan Data Lari Nadia</span>
+                                    <span class="detail-meta">101 LOC • CircleLari.cpp</span>
+                                </div>
+                            </div>
+                            <div class="detail-item done" data-sub="Kasus 2 Rekap KM Splits Half Marathon">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 2 — Rekap KM Splits Half Marathon</span>
+                                    <span class="detail-meta">89 LOC • HalfMarathon.cpp</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modul 3: Tugas 1 Kulino -->
+                <div class="task-card" data-status="selesai" data-module="3">
+                    <div class="card-header">
+                        <div class="card-badge modul-3">Modul 03</div>
+                        <div class="card-status done">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            Selesai
+                        </div>
+                    </div>
+                    <h3 class="card-title">Tugas 1 — Praktikum Algoritma & Pemrograman (Kulino)</h3>
+                    <p class="card-topic">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                        Aljabar, Percabangan (If-Else), Perulangan, & Pointer Dasar
+                    </p>
+                    <div class="card-stats">
+                        <div class="mini-stat">
+                            <span class="mini-num">7</span>
+                            <span class="mini-label">File C++</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="mini-num">4</span>
+                            <span class="mini-label">Dokumen</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="mini-num">187</span>
+                            <span class="mini-label">LOC</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="mini-num">7</span>
+                            <span class="mini-label">Kasus</span>
+                        </div>
+                    </div>
+                    <div class="card-progress">
+                        <div class="card-progress-bar" style="--progress: 100%"></div>
+                    </div>
+                    <button class="card-expand" aria-label="Lihat Detail" onclick="toggleExpand(this)">
+                        <span>Lihat Detail</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="card-details">
+                        <div class="details-grid">
+                            <div class="detail-item done" data-sub="Kasus 1">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 1 — Perhitungan Aljabar</span>
+                                    <span class="detail-meta">34 LOC • PAS_Kasus1_A11.2026.16638.cpp</span>
+                                </div>
+                            </div>
+                            <div class="detail-item done" data-sub="Kasus 2">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 2 — Kalkulasi Upah Kerja</span>
+                                    <span class="detail-meta">29 LOC • PAS_Kasus2_A11.2026.16638.cpp</span>
+                                </div>
+                            </div>
+                            <div class="detail-item done" data-sub="Kasus 3">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 3 — Relasi Logika & Deret Angka</span>
+                                    <span class="detail-meta">21 LOC • PAS_Kasus3_A11.2026.16638.cpp</span>
+                                </div>
+                            </div>
+                            <div class="detail-item done" data-sub="Kasus 4">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 4 — Pemrosesan Array 1D</span>
+                                    <span class="detail-meta">29 LOC • PAS_Kasus4_A11.2026.16638.cpp</span>
+                                </div>
+                            </div>
+                            <div class="detail-item done" data-sub="Kasus 5">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 5 — Struct Sederhana</span>
+                                    <span class="detail-meta">18 LOC • PAS_Kasus5_A11.2026.16638.cpp</span>
+                                </div>
+                            </div>
+                            <div class="detail-item done" data-sub="Kasus 6">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 6 — Struktur Data Titik Koordinat</span>
+                                    <span class="detail-meta">36 LOC • PAS_Kasus6_A11.2026.16638.cpp</span>
+                                </div>
+                            </div>
+                            <div class="detail-item done" data-sub="Kasus 7">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 7 — Pointer & Alamat Memori</span>
+                                    <span class="detail-meta">20 LOC • PAS_Kasus7_A11.2026.16638.cpp</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modul 4: Tugas 2 Kondisi, Loop, Array -->
+                <div class="task-card" data-status="selesai" data-module="4">
+                    <div class="card-header">
+                        <div class="card-badge modul-4">Modul 04</div>
+                        <div class="card-status done">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            Selesai
+                        </div>
+                    </div>
+                    <h3 class="card-title">Tugas 2 — Kondisi, Loop, Array</h3>
+                    <p class="card-topic">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                        C++ Algorithm & Implementation
+                    </p>
+                    <div class="card-stats">
+                        <div class="mini-stat">
+                            <span class="mini-num">9</span>
+                            <span class="mini-label">File C++</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="mini-num">9</span>
+                            <span class="mini-label">Dokumen</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="mini-num">770</span>
+                            <span class="mini-label">LOC</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="mini-num">9</span>
+                            <span class="mini-label">Kasus</span>
+                        </div>
+                    </div>
+                    <div class="card-progress">
+                        <div class="card-progress-bar" style="--progress: 100%"></div>
+                    </div>
+                    <button class="card-expand" aria-label="Lihat Detail" onclick="toggleExpand(this)">
+                        <span>Lihat Detail</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="card-details">
+                        <div class="details-grid">
+                            <div class="detail-item done" data-sub="Kasus 1 Membandingkan Harga Sepatu">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 1 — Membandingkan Harga Sepatu</span>
+                                    <span class="detail-meta">121 LOC • Membandingkan Harga Sepatu.cpp</span>
+                                </div>
+                            </div>
+                            <div class="detail-item done" data-sub="Kasus 2 Data Sepatu Anggota Circle Lari">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 2 — Data Sepatu Anggota Circle Lari</span>
+                                    <span class="detail-meta">94 LOC • Data Sepatu Anggota Circle Lari.cpp</span>
+                                </div>
+                            </div>
+                            <div class="detail-item done" data-sub="Kasus 3 Mencari Nilai Terbesar Dari 5 Data Sepatu">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 3 — Mencari Nilai Terbesar Dari 5 Data</span>
+                                    <span class="detail-meta">67 LOC • Mencari Nilai Terbesar Dari 5 Data Sepatu.cpp</span>
+                                </div>
+                            </div>
+                            <div class="detail-item done" data-sub="Kasus 4 Modifikasi Pengaturan Dari Besar ke Kecil">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 4 — Modifikasi Pengaturan Besar ke Kecil</span>
+                                    <span class="detail-meta">80 LOC • Modifikasi Pengaturan Dari Besar ke Kecil.cpp</span>
+                                </div>
+                            </div>
+                            <div class="detail-item done" data-sub="Kasus 5 Analisis Klasifikasi Karakteristik Bilangan">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 5 — Klasifikasi Karakteristik Bilangan Bulat</span>
+                                    <span class="detail-meta">90 LOC • Analisis Klasifikasi Karakteristik Bilangan Bulat.cpp</span>
+                                </div>
+                            </div>
+                            <div class="detail-item done" data-sub="Kasus 6 Pengurutan Tiga Bilangan Bulat">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 6 — Pengurutan Tiga Bilangan Bulat</span>
+                                    <span class="detail-meta">82 LOC • Pengurutan Tiga Bilangan Bulat.cpp</span>
+                                </div>
+                            </div>
+                            <div class="detail-item done" data-sub="Kasus 7 Translasi Bilangan Bulat 1-100">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 7 — Translasi Bilangan 1-100 ke String</span>
+                                    <span class="detail-meta">101 LOC • Translasi Bilangan Bulat Rentang 1-100.cpp</span>
+                                </div>
+                            </div>
+                            <div class="detail-item done" data-sub="Kasus 8 Translasi Kode Angka">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 8 — Translasi Kode Angka ke Teks</span>
+                                    <span class="detail-meta">69 LOC • Translasi Kode Angka Pemilihan Bertingkat.cpp</span>
+                                </div>
+                            </div>
+                            <div class="detail-item done" data-sub="Kasus 9 Komparasi Massa Dua Semangka">
+                                <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <div class="detail-info">
+                                    <span class="detail-title">Kasus 9 — Komparasi Massa Dua Semangka</span>
+                                    <span class="detail-meta">66 LOC • Komparasi Massa Dua Semangka.cpp</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Timeline -->
+            <section class="timeline-section">
+                <h2 class="section-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    Timeline Aktivitas
+                </h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot done"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Semester Awal</span>
+                            <h4>Daspro Latihan — 14 Kasus Selesai</h4>
+                            <p>Latihan dasar C++ termasuk ADT, Struct, Array, dan Pointer</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot done"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Tugas 1</span>
+                            <h4>Fun Run & Half Marathon — 2 Kasus Selesai</h4>
+                            <p>Implementasi ADT Struct & String Parsing untuk pencatatan data lari</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot done"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Tugas 1 Kulino</span>
+                            <h4>Praktikum Algoritma — 7 Kasus Selesai</h4>
+                            <p>Aljabar, percabangan, perulangan, dan pointer dasar</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot done"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Tugas 2</span>
+                            <h4>Kondisi, Loop, Array — 9 Kasus Selesai</h4>
+                            <p>Algoritma C++ mencakup kondisi, perulangan, dan operasi array</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    DASPRO Task Tracker — Muhammad Fajri Setyawan • A11.2026.16638
+                </p>
+                <p class="footer-sub">Teknik Informatika — Universitas Dian Nuswantoro</p>
+                <p class="footer-sync">Terakhir disinkronkan: 5 Oktober 2026, 19:12 WIB</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

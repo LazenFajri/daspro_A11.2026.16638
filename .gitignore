@@ -1,0 +1,16 @@
+# Compiled Executables & Objects
+*.exe
+*.o
+*.obj
+*.out
+*.app
+
+# IDE / Editor folders
+.vscode/
+.idea/
+*.swp
+*~
+
+# Python cache (if any)
+__pycache__/
+*.pyc
