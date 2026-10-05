@@ -2,10 +2,996 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=./task-tracker/index.html">
-    <title>Redirecting...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASPRO Hub — Muhammad Fajri Setyawan</title>
+    <meta name="description" content="Portal Tugas Dasar Pemrograman C++ — Teknik Informatika UDINUS">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #06060b;
+            --surface: rgba(255,255,255,0.03);
+            --border: rgba(255,255,255,0.06);
+            --text: #f0f0f5;
+            --text-dim: #7a7a95;
+            --text-muted: #44445a;
+            --indigo: #6366f1;
+            --violet: #a78bfa;
+            --pink: #ec4899;
+            --cyan: #22d3ee;
+            --green: #22c55e;
+            --amber: #f59e0b;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection { background: rgba(99,102,241,0.3); }
+
+        /* === HERO CANVAS BACKGROUND === */
+        .hero-canvas {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .hero-canvas .grid-bg {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 80px 80px;
+            mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 100%);
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            animation: orbFloat 12s ease-in-out infinite;
+        }
+
+        .orb-1 {
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(99,102,241,0.15), transparent 70%);
+            top: -10%; left: 30%;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(236,72,153,0.1), transparent 70%);
+            bottom: -10%; right: -5%;
+            animation-delay: 4s;
+        }
+
+        .orb-3 {
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(34,211,238,0.08), transparent 70%);
+            top: 40%; left: -10%;
+            animation-delay: 8s;
+        }
+
+        @keyframes orbFloat {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -20px) scale(1.05); }
+            66% { transform: translate(-20px, 15px) scale(0.95); }
+        }
+
+        /* Floating code particles */
+        .code-particles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+
+        .code-particle {
+            position: absolute;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--indigo);
+            opacity: 0;
+            animation: codeFloat linear infinite;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        @keyframes codeFloat {
+            0% { opacity: 0; transform: translateY(100vh) rotate(0deg); }
+            5% { opacity: 0.15; }
+            95% { opacity: 0.15; }
+            100% { opacity: 0; transform: translateY(-10vh) rotate(5deg); }
+        }
+
+        /* === MAIN CONTENT === */
+        .content {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* === NAVBAR === */
+        .navbar {
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-logo {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--indigo), var(--violet));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 800;
+            color: white;
+            box-shadow: 0 0 20px rgba(99,102,241,0.3);
+        }
+
+        .nav-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        .nav-title span {
+            background: linear-gradient(135deg, var(--indigo), var(--violet));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-badge .dot {
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            background: var(--green);
+            box-shadow: 0 0 8px rgba(34,197,94,0.5);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(0.85); }
+        }
+
+        .nav-badge span {
+            font-size: 0.72rem;
+            font-weight: 500;
+            color: var(--text-dim);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .nav-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 16px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--indigo), var(--violet));
+            color: white;
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 250ms ease;
+            box-shadow: 0 0 15px rgba(99,102,241,0.25);
+        }
+
+        .nav-cta-btn:hover {
+            transform: translateY(-1px) scale(1.03);
+            box-shadow: 0 0 20px rgba(99,102,241,0.45);
+        }
+
+        .nav-cta-btn svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* === HERO === */
+        .hero {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 24px;
+            min-height: calc(100vh - 80px);
+        }
+
+        .hero-inner {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 18px;
+            border-radius: 999px;
+            border: 1px solid rgba(99,102,241,0.2);
+            background: rgba(99,102,241,0.06);
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--violet);
+            margin-bottom: 32px;
+            animation: fadeInDown 0.8s cubic-bezier(0.16,1,0.3,1) 0.2s both;
+        }
+
+        .hero-badge svg {
+            width: 14px; height: 14px;
+        }
+
+        .hero-heading {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            margin-bottom: 24px;
+            animation: fadeInDown 0.8s cubic-bezier(0.16,1,0.3,1) 0.4s both;
+        }
+
+        .hero-heading .line-1 { display: block; }
+        .hero-heading .line-2 {
+            display: block;
+            background: linear-gradient(135deg, var(--indigo) 0%, var(--violet) 40%, var(--pink) 70%, var(--cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% auto;
+            animation: gradientShift 4s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% center; }
+            50% { background-position: 100% center; }
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-dim);
+            max-width: 560px;
+            margin: 0 auto 40px;
+            animation: fadeInDown 0.8s cubic-bezier(0.16,1,0.3,1) 0.6s both;
+        }
+
+        .hero-desc strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        /* CTA Buttons */
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+            animation: fadeInDown 0.8s cubic-bezier(0.16,1,0.3,1) 0.8s both;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 14px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 300ms cubic-bezier(0.16,1,0.3,1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn svg {
+            width: 18px; height: 18px;
+            transition: transform 300ms cubic-bezier(0.16,1,0.3,1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--indigo), var(--violet));
+            color: white;
+            border: none;
+            box-shadow:
+                0 0 0 1px rgba(99,102,241,0.3),
+                0 4px 16px rgba(99,102,241,0.25),
+                0 8px 32px rgba(99,102,241,0.15);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+            opacity: 0;
+            transition: opacity 300ms;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow:
+                0 0 0 1px rgba(99,102,241,0.4),
+                0 8px 24px rgba(99,102,241,0.35),
+                0 16px 48px rgba(99,102,241,0.2);
+        }
+
+        .btn-primary:hover::before { opacity: 1; }
+        .btn-primary:hover svg { transform: translateX(3px); }
+
+        .btn-secondary {
+            background: var(--surface);
+            color: var(--text);
+            border: 1px solid var(--border);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(255,255,255,0.12);
+            transform: translateY(-2px);
+        }
+
+        /* Stats Ticker */
+        .hero-stats {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            animation: fadeInDown 0.8s cubic-bezier(0.16,1,0.3,1) 1.0s both;
+        }
+
+        .hero-stat {
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-stat::after {
+            content: '';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 30px;
+            background: var(--border);
+        }
+
+        .hero-stat:last-child::after { display: none; }
+
+        .hero-stat-num {
+            font-size: 2rem;
+            font-weight: 800;
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            background: linear-gradient(135deg, var(--text), var(--text-dim));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-stat-label {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 6px;
+        }
+
+        /* === CARDS SECTION === */
+        .cards-section {
+            padding: 0 24px 80px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cards-header {
+            max-width: 1100px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+
+        .cards-header h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .cards-header p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        .cards-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 32px;
+            transition: all 400ms cubic-bezier(0.16,1,0.3,1);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--indigo), var(--violet));
+            opacity: 0;
+            transition: opacity 300ms;
+        }
+
+        .feature-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(99,102,241,0.06), transparent 60%);
+            opacity: 0;
+            transition: opacity 400ms;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(99,102,241,0.2);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 40px rgba(99,102,241,0.08);
+        }
+
+        .feature-card:hover::before { opacity: 1; }
+        .feature-card:hover::after { opacity: 1; }
+
+        .card-icon {
+            width: 52px; height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-icon svg { width: 24px; height: 24px; }
+
+        .card-icon.icon-tracker {
+            background: rgba(99,102,241,0.12);
+            color: var(--indigo);
+        }
+
+        .card-icon.icon-repo {
+            background: rgba(34,211,238,0.12);
+            color: var(--cyan);
+        }
+
+        .card-icon.icon-readme {
+            background: rgba(236,72,153,0.12);
+            color: var(--pink);
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card p {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-arrow {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 20px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--violet);
+            position: relative;
+            z-index: 1;
+            transition: gap 300ms;
+        }
+
+        .card-arrow svg { width: 16px; height: 16px; }
+
+        .feature-card:hover .card-arrow { gap: 10px; }
+
+        /* Modul Chips */
+        .moduls-row {
+            max-width: 1100px;
+            margin: 40px auto 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .modul-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-dim);
+            transition: all 300ms;
+            cursor: default;
+        }
+
+        .modul-chip:hover {
+            border-color: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.05);
+            transform: translateY(-2px);
+        }
+
+        .modul-chip .chip-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+        }
+
+        .chip-dot.c1 { background: var(--indigo); box-shadow: 0 0 6px rgba(99,102,241,0.5); }
+        .chip-dot.c2 { background: var(--pink); box-shadow: 0 0 6px rgba(236,72,153,0.5); }
+        .chip-dot.c3 { background: var(--amber); box-shadow: 0 0 6px rgba(245,158,11,0.5); }
+        .chip-dot.c4 { background: var(--cyan); box-shadow: 0 0 6px rgba(34,211,238,0.5); }
+
+        .modul-chip .chip-status {
+            font-size: 0.68rem;
+            padding: 2px 8px;
+            border-radius: 999px;
+            background: rgba(34,197,94,0.1);
+            color: var(--green);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* === FOOTER === */
+        .landing-footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-id {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            margin-bottom: 16px;
+        }
+
+        .footer-avatar {
+            width: 30px; height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--indigo), var(--violet));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .footer-id-text {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .footer-id-name {
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+
+        .footer-id-nim {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .footer-uni {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .footer-uni strong {
+            color: var(--text-dim);
+            font-weight: 500;
+        }
+
+        /* === ANIMATIONS === */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .cards-section {
+            animation: fadeInUp 0.8s cubic-bezier(0.16,1,0.3,1) 1.2s both;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 640px) {
+            .hero-heading {
+                font-size: 2.2rem;
+            }
+
+            .hero-desc {
+                font-size: 0.95rem;
+            }
+
+            .hero-stats {
+                gap: 24px;
+            }
+
+            .hero-stat::after { display: none; }
+
+            .hero-stat-num { font-size: 1.5rem; }
+
+            .hero-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn { width: 100%; justify-content: center; }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-badge { display: none; }
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
 </head>
 <body>
-    <p>Redirecting to <a href="./task-tracker/index.html">DASPRO Task Tracker</a>...</p>
+    <!-- Background -->
+    <div class="hero-canvas">
+        <div class="grid-bg"></div>
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="code-particles" id="codeParticles"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="nav-inner">
+                <div class="nav-brand">
+                    <div class="nav-logo">D</div>
+                    <div class="nav-title">DASPRO <span>Hub</span></div>
+                </div>
+                <div class="nav-right">
+                    <div class="nav-badge">
+                        <div class="dot"></div>
+                        <span>Semester Aktif — 2026</span>
+                    </div>
+                    <a href="./task-tracker/index.html" class="nav-cta-btn">
+                        <span>Tracker</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-inner">
+                <div class="hero-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    Teknik Informatika — UDINUS
+                </div>
+
+                <h1 class="hero-heading">
+                    <span class="line-1">Dasar Pemrograman</span>
+                    <span class="line-2">Activity & Assignment Hub</span>
+                </h1>
+
+                <p class="hero-desc">
+                    Portal lengkap untuk tracking & pengecekan tugas mata kuliah
+                    <strong>Dasar Pemrograman C++</strong>. Semua modul, source code,
+                    dan dokumen tersusun rapi dalam satu tempat.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="./task-tracker/index.html" class="btn btn-primary">
+                        Buka Task Tracker
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="https://github.com/LazenFajri/daspro_A11.2026.16638" target="_blank" class="btn btn-secondary">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                        GitHub Repository
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-num" data-count="4">0</div>
+                        <div class="hero-stat-label">Modul Tugas</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-num" data-count="32">0</div>
+                        <div class="hero-stat-label">Source Files</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-num" data-count="2168">0</div>
+                        <div class="hero-stat-label">Baris Kode</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-num" data-count="100">0</div>
+                        <div class="hero-stat-label">% Selesai</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Cards -->
+        <section class="cards-section">
+            <div class="cards-header">
+                <h2>Akses Cepat</h2>
+                <p>Pilih menu yang ingin kamu buka</p>
+            </div>
+
+            <div class="cards-grid">
+                <a href="./task-tracker/index.html" class="feature-card">
+                    <div class="card-icon icon-tracker">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="2"/><path d="M9 14l2 2 4-4"/></svg>
+                    </div>
+                    <h3>📋 Task Tracker</h3>
+                    <p>Dashboard interaktif untuk melihat progress, status penyelesaian, dan detail setiap sub-tugas dari seluruh modul DASPRO.</p>
+                    <div class="card-arrow">
+                        Buka Dashboard
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </a>
+
+                <a href="https://github.com/LazenFajri/daspro_A11.2026.16638" target="_blank" class="feature-card">
+                    <div class="card-icon icon-repo">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 00-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 004 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                    </div>
+                    <h3>🗂️ GitHub Repository</h3>
+                    <p>Akses langsung ke repository GitHub dengan seluruh source code C++, dokumen PDF, dan file pendukung lainnya.</p>
+                    <div class="card-arrow">
+                        Buka Repository
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+                    </div>
+                </a>
+
+                <a href="https://github.com/LazenFajri/daspro_A11.2026.16638#readme" target="_blank" class="feature-card">
+                    <div class="card-icon icon-readme">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    </div>
+                    <h3>📖 README Showcase</h3>
+                    <p>Halaman README lengkap dengan arsip modul, daftar berkas, statistik kode, dan deskripsi setiap kasus tugas.</p>
+                    <div class="card-arrow">
+                        Baca README
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Modul Chips -->
+            <div class="moduls-row">
+                <div class="modul-chip">
+                    <span class="chip-dot c1"></span>
+                    Daspro Latihan
+                    <span class="chip-status">✓ Done</span>
+                </div>
+                <div class="modul-chip">
+                    <span class="chip-dot c2"></span>
+                    Tugas 1 — Fun Run & ADT
+                    <span class="chip-status">✓ Done</span>
+                </div>
+                <div class="modul-chip">
+                    <span class="chip-dot c3"></span>
+                    Tugas 1 — Kulino
+                    <span class="chip-status">✓ Done</span>
+                </div>
+                <div class="modul-chip">
+                    <span class="chip-dot c4"></span>
+                    Tugas 2 — Kondisi, Loop, Array
+                    <span class="chip-status">✓ Done</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="landing-footer">
+            <div class="footer-id">
+                <div class="footer-avatar">MF</div>
+                <div class="footer-id-text">
+                    <span class="footer-id-name">Muhammad Fajri Setyawan</span>
+                    <span class="footer-id-nim">A11.2026.16638</span>
+                </div>
+            </div>
+            <p class="footer-uni">
+                <strong>Teknik Informatika</strong> — Universitas Dian Nuswantoro (UDINUS)
+            </p>
+        </footer>
+
+    </div>
+
+    <script>
+        // === Count Up Animation ===
+        function animateCountUp() {
+            const counters = document.querySelectorAll('.hero-stat-num');
+            const easeOutQuart = t => 1 - Math.pow(1 - t, 4);
+
+            counters.forEach(counter => {
+                const target = parseInt(counter.dataset.count);
+                const duration = 2000;
+                const startTime = performance.now();
+
+                function update(now) {
+                    const elapsed = now - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const value = Math.round(easeOutQuart(progress) * target);
+                    counter.textContent = value.toLocaleString('id-ID');
+                    if (progress < 1) requestAnimationFrame(update);
+                }
+
+                requestAnimationFrame(update);
+            });
+        }
+
+        // Run count up when hero section is visible
+        const heroStatsEl = document.querySelector('.hero-stats');
+        if (heroStatsEl) {
+            const heroObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(animateCountUp, 400);
+                        heroObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            heroObserver.observe(heroStatsEl);
+        } else {
+            animateCountUp();
+        }
+
+        // === Code Particles ===
+        const codeSnippets = [
+            '#include <iostream>',
+            'using namespace std;',
+            'int main() {',
+            'cout << "Hello";',
+            'return 0; }',
+            'struct Data {',
+            'string nama;',
+            'int nilai;',
+            'for (int i=0;',
+            'if (x > y)',
+            'float avg =',
+            'cin >> input;',
+            'void swap()',
+            'arr[i] = val;',
+            'while (n > 0)',
+            'switch (ch) {',
+            'break;',
+            'double sum = 0;',
+            'ptr = &var;',
+            'sizeof(int)',
+        ];
+
+        const container = document.getElementById('codeParticles');
+        for (let i = 0; i < 15; i++) {
+            const el = document.createElement('div');
+            el.className = 'code-particle';
+            el.textContent = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
+            el.style.left = (5 + Math.random() * 90) + '%';
+            el.style.animationDuration = (15 + Math.random() * 20) + 's';
+            el.style.animationDelay = (Math.random() * 15) + 's';
+            el.style.fontSize = (10 + Math.random() * 4) + 'px';
+            container.appendChild(el);
+        }
+
+        // === Smooth card hover tilt (subtle) ===
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                card.style.transform = `translateY(-6px) perspective(600px) rotateX(${-y * 4}deg) rotateY(${x * 4}deg)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
+        });
+    </script>
 </body>
 </html>

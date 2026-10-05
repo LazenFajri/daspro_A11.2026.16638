@@ -1,6 +1,7 @@
 {
+  "cleanUrls": true,
   "rewrites": [
-    { "source": "/", "destination": "/task-tracker/index.html" }
+    { "source": "/tracker", "destination": "/task-tracker/index.html" }
   ],
   "headers": [
     {
