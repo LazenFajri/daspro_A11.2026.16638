@@ -26,10 +26,10 @@
 
 <div align="center">
 
-<img src="https://img.shields.io/badge/TOTAL_MODUL_TUGAS-4_Modul-black?style=for-the-badge&labelColor=1a1a1a&color=007ACC" height="38" alt="Total Modul" />
-<img src="https://img.shields.io/badge/SOURCE_FILES-32_Files-black?style=for-the-badge&labelColor=1a1a1a&color=4CAF50" height="38" alt="Source Files" />
-<img src="https://img.shields.io/badge/DOKUMEN_PDF-29_Berkas-black?style=for-the-badge&labelColor=1a1a1a&color=E91E63" height="38" alt="Dokumen PDF" />
-<img src="https://img.shields.io/badge/TOTAL_BARIS_KODE-2168_LOC-black?style=for-the-badge&labelColor=1a1a1a&color=FF9800" height="38" alt="Total LOC" />
+<img src="https://img.shields.io/badge/TOTAL_MODUL_TUGAS-5_Modul-black?style=for-the-badge&labelColor=1a1a1a&color=007ACC" height="38" alt="Total Modul" />
+<img src="https://img.shields.io/badge/SOURCE_FILES-34_Files-black?style=for-the-badge&labelColor=1a1a1a&color=4CAF50" height="38" alt="Source Files" />
+<img src="https://img.shields.io/badge/DOKUMEN_PDF-31_Berkas-black?style=for-the-badge&labelColor=1a1a1a&color=E91E63" height="38" alt="Dokumen PDF" />
+<img src="https://img.shields.io/badge/TOTAL_BARIS_KODE-2368_LOC-black?style=for-the-badge&labelColor=1a1a1a&color=FF9800" height="38" alt="Total LOC" />
 
 </div>
 
@@ -40,9 +40,10 @@
 | No | Modul Tugas | Topik / Fokus Materi | Sub-Modul | File C++ | Dokumen | Status | Navigasi |
 | :-: | :--- | :--- | :---: | :---: | :---: | :---: | :---: |
 | `01` | **Daspro Latihan** | `C++ Algorithm & Implementation` | `16 Sub-Folder` | `14` | `14` | <span style="color:#4CAF50">●</span> Selesai | [Buka Detail](#daspro-latihan) |
-| `02` | **Tugas 1 — Fun Run & Half Marathon Activity Recorder** | `ADT Struct, String Parsing & Time Telemetry Aggregator` | `2 Kasus` | `2` | `2` | <span style="color:#4CAF50">●</span> Selesai | [Buka Detail](#tugas-1-fun-run-aritmatika-dan-adt) |
-| `03` | **Tugas 1 — Praktikum Algoritma & Pemrograman (Kulino)** | `Aljabar, Percabangan (If-Else), Perulangan, & Pointer Dasar` | `7 Kasus` | `7` | `4` | <span style="color:#4CAF50">●</span> Selesai | [Buka Detail](#tugas-1-kulino) |
-| `04` | **Tugas 2 Kondisi, Loop, Array** | `C++ Algorithm & Implementation` | `9 Kasus` | `9` | `9` | <span style="color:#4CAF50">●</span> Selesai | [Buka Detail](#tugas-2-kondisi-loop-array) |
+| `02` | **Daspro Latihan 2** | `C++ Algorithm & Implementation` | `2 Kasus` | `2` | `2` | <span style="color:#4CAF50">●</span> Selesai | [Buka Detail](#daspro-latihan-2) |
+| `03` | **Tugas 1 — Fun Run & Half Marathon Activity Recorder** | `ADT Struct, String Parsing & Time Telemetry Aggregator` | `2 Kasus` | `2` | `2` | <span style="color:#4CAF50">●</span> Selesai | [Buka Detail](#tugas-1-fun-run-aritmatika-dan-adt) |
+| `04` | **Tugas 1 — Praktikum Algoritma & Pemrograman (Kulino)** | `Aljabar, Percabangan (If-Else), Perulangan, & Pointer Dasar` | `7 Kasus` | `7` | `4` | <span style="color:#4CAF50">●</span> Selesai | [Buka Detail](#tugas-1-kulino) |
+| `05` | **Tugas 2 Kondisi, Loop, Array** | `C++ Algorithm & Implementation` | `9 Kasus` | `9` | `9` | <span style="color:#4CAF50">●</span> Selesai | [Buka Detail](#tugas-2-kondisi-loop-array) |
 
 ---
 
@@ -89,6 +90,22 @@
 | 📁 `Latihan 2/Kasus 6 Perbandingan Dan Pengurutan 3 Bilangan` | [`Perbandingan Dan Pengurutan 3 Bilangan.pdf`](./Daspro%20Latihan/Latihan%202/Kasus%206%20Perbandingan%20Dan%20Pengurutan%203%20Bilangan/Perbandingan%20Dan%20Pengurutan%203%20Bilangan.pdf) | ![PDF](https://img.shields.io/badge/-PDF-red?style=flat-square&logo=adobeacrobatreader&logoColor=white) | `61.0 KB` | — | Dokumen Laporan & Analisis — Kasus 6 |
 | 📁 `Latihan 2/Kasus 7 Konversi Angka Menjadi Kata` | [`Konversi Angka Menjadi Kata.cpp`](./Daspro%20Latihan/Latihan%202/Kasus%207%20Konversi%20Angka%20Menjadi%20Kata/Konversi%20Angka%20Menjadi%20Kata.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `2.7 KB` | `73` | Konsep Alamat Memori & Manipulasi Variabel Pointer |
 | 📁 `Latihan 2/Kasus 7 Konversi Angka Menjadi Kata` | [`Konversi Angka Menjadi Kata.pdf`](./Daspro%20Latihan/Latihan%202/Kasus%207%20Konversi%20Angka%20Menjadi%20Kata/Konversi%20Angka%20Menjadi%20Kata.pdf) | ![PDF](https://img.shields.io/badge/-PDF-red?style=flat-square&logo=adobeacrobatreader&logoColor=white) | `60.2 KB` | — | Dokumen Laporan & Analisis — Kasus 7 |
+
+<a id="daspro-latihan-2"></a>
+
+#### Daspro Latihan 2
+
+> 📂 **Folder**: [`Daspro Latihan 2`](./Daspro%20Latihan%202)  
+> 🎯 **Topik**: C++ Algorithm & Implementation  
+> 📈 **Statistik**: `2 File C++` | `2 Dokumen PDF` | `200 Baris Kode`
+> 🗂️ **Struktur Sub-Folder**: `Kasus 1 Autentikasi Login Bertingkat` • `Kasus 2 Kalkulator Geometri Bangun Ruang`
+
+| Sub-Folder / Modul | Berkas | Format | Ukuran | Baris | Deskripsi & Topik Pembahasan |
+| :--- | :--- | :---: | :---: | :---: | :--- |
+| 📁 `Kasus 1 Autentikasi Login Bertingkat` | [`Autentikasi Login Bertingkat.cpp`](./Daspro%20Latihan%202/Kasus%201%20Autentikasi%20Login%20Bertingkat/Autentikasi%20Login%20Bertingkat.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `3.3 KB` | `77` | Perhitungan Aljabar, Statistik Bilangan & Konversi Suhu |
+| 📁 `Kasus 1 Autentikasi Login Bertingkat` | [`Autentikasi Login Bertingkat.pdf`](./Daspro%20Latihan%202/Kasus%201%20Autentikasi%20Login%20Bertingkat/Autentikasi%20Login%20Bertingkat.pdf) | ![PDF](https://img.shields.io/badge/-PDF-red?style=flat-square&logo=adobeacrobatreader&logoColor=white) | `57.9 KB` | — | Dokumen Laporan & Analisis — Kasus 1 |
+| 📁 `Kasus 2 Kalkulator Geometri Bangun Ruang` | [`Kalkulator Geometri Bangun Ruang.cpp`](./Daspro%20Latihan%202/Kasus%202%20Kalkulator%20Geometri%20Bangun%20Ruang/Kalkulator%20Geometri%20Bangun%20Ruang.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `5.3 KB` | `123` | Kalkulasi Upah Kerja & Persentase Lembur |
+| 📁 `Kasus 2 Kalkulator Geometri Bangun Ruang` | [`Kalkulator Geometri Bangun Ruang.pdf`](./Daspro%20Latihan%202/Kasus%202%20Kalkulator%20Geometri%20Bangun%20Ruang/Kalkulator%20Geometri%20Bangun%20Ruang.pdf) | ![PDF](https://img.shields.io/badge/-PDF-red?style=flat-square&logo=adobeacrobatreader&logoColor=white) | `59.1 KB` | — | Dokumen Laporan & Analisis — Kasus 2 |
 
 <a id="tugas-1-fun-run-aritmatika-dan-adt"></a>
 
@@ -170,6 +187,6 @@
 
 [![Last Commit](https://img.shields.io/github/last-commit/LazenFajri/daspro_A11.2026.16638?style=flat-square&logo=github&label=Terakhir%20Diperbarui&color=007ACC)](https://github.com/LazenFajri/daspro_A11.2026.16638/commits/main)
 
-<sub>Terakhir disinkronkan otomatis pada: <b>5 Oktober 2026, 12:32 WIB</b> • Dikelola oleh GitHub Actions</sub>
+<sub>Terakhir disinkronkan otomatis pada: <b>7 Oktober 2026, 23:16 WIB</b> • Dikelola oleh GitHub Actions</sub>
 
 </div>
