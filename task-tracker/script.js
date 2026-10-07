@@ -2,16 +2,27 @@
 // DASPRO TASK TRACKER — Interactive JavaScript
 // ============================================
 
-document.addEventListener('DOMContentLoaded', () => {
-    initParticles();
-    initThemeToggle();
-    initCountUp();
-    initProgressBar();
-    initSearch();
-    initFilterPills();
-    initKeyboardShortcuts();
-    initScrollReveal();
-});
+if (!window.__DASPRO_INITIALIZED__) {
+    window.__DASPRO_INITIALIZED__ = true;
+
+    function runInit() {
+        initParticles();
+        initThemeToggle();
+        initCountUp();
+        initProgressBar();
+        initSearch();
+        initFilterPills();
+        initKeyboardShortcuts();
+        initScrollReveal();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', runInit);
+    } else {
+        runInit();
+    }
+}
+
 
 // === Floating Particles ===
 function initParticles() {
