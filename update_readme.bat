@@ -1,7 +1,8 @@
 @echo off
-echo ==============================================
-echo   Updating DASPRO README.md automatically...
-echo ==============================================
+echo ========================================================
+echo   Auto-Sync DASPRO README, Task Tracker ^& Portal...
+echo ========================================================
 python scripts/generate_readme.py
 echo.
 pause
+

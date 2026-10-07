@@ -97,20 +97,46 @@ def extract_file_description(file_path, file_name="", subfolder=""):
             pass
 
     # 2. Pola Kasus terstruktur (cek dari nama file dan nama subfolder)
+    # 2a. Cek nama kasus eksplisit dari subfolder (misal: "Kasus 1 Autentikasi Login Bertingkat")
+    m_sub = re.search(r'kasus\s*(\d+)[\s—\-_:]+(.+)', subfolder, re.IGNORECASE)
+    if m_sub:
+        k_num = m_sub.group(1)
+        k_title = m_sub.group(2).strip()
+        if ext in {'.cpp', '.c', '.cxx', '.h', '.hpp'}:
+            return f"Kasus {k_num} — {k_title}"
+        elif ext == '.pdf':
+            return f"Dokumen Laporan & Analisis — Kasus {k_num} ({k_title})"
+
+    # 2b. Cek nama kasus eksplisit dari nama file (misal: "Kasus 1 Data Sepatu Sederhana.cpp")
+    m_fn = re.search(r'kasus\s*(\d+)[\s—\-_:]+(.+)', file_name, re.IGNORECASE)
+    if m_fn:
+        k_num = m_fn.group(1)
+        k_title = Path(m_fn.group(2)).stem.strip()
+        if ext in {'.cpp', '.c', '.cxx', '.h', '.hpp'}:
+            return f"Kasus {k_num} — {k_title}"
+        elif ext == '.pdf':
+            return f"Dokumen Laporan & Analisis — Kasus {k_num} ({k_title})"
+
+    # 2c. Pola kasus umum
     combined_name = f"{subfolder}_{file_name}"
     kasus_match = re.search(r'kasus\s*(\d+)', combined_name, re.IGNORECASE)
     if kasus_match:
         k_num = kasus_match.group(1)
-        fallback_kasus = {
-            "1": "Perhitungan Aljabar, Statistik Bilangan & Konversi Suhu",
-            "2": "Kalkulasi Upah Kerja & Persentase Lembur",
-            "3": "Relasi Logika Dua Bilangan & Deret Angka",
-            "4": "Pemrosesan Array 1D (Min, Max, Sum, & Rata-rata)",
-            "5": "Definisi Tipe Bentukan Struct Sederhana",
-            "6": "Struktur Data Titik Koordinat (ADT Point)",
-            "7": "Konsep Alamat Memori & Manipulasi Variabel Pointer"
-        }
-        topic = fallback_kasus.get(k_num, f"Praktikum Pemrograman — Kasus {k_num}")
+        stem_raw = Path(file_name).stem.replace('_', ' ').replace('-', ' ').strip()
+        if not re.match(r'^pas\s*kasus', stem_raw, re.IGNORECASE) and not re.match(r'^kasus\s*\d+$', stem_raw, re.IGNORECASE):
+            stem_spaced = re.sub(r'([a-z])([A-Z])', r'\1 \2', stem_raw)
+            topic = f"Kasus {k_num} — {stem_spaced}"
+        else:
+            fallback_kasus = {
+                "1": "Perhitungan Aljabar, Statistik Bilangan & Konversi Suhu",
+                "2": "Kalkulasi Upah Kerja & Persentase Lembur",
+                "3": "Relasi Logika Dua Bilangan & Deret Angka",
+                "4": "Pemrosesan Array 1D (Min, Max, Sum, & Rata-rata)",
+                "5": "Definisi Tipe Bentukan Struct Sederhana",
+                "6": "Struktur Data Titik Koordinat (ADT Point)",
+                "7": "Konsep Alamat Memori & Manipulasi Variabel Pointer"
+            }
+            topic = f"Kasus {k_num} — {fallback_kasus.get(k_num, f'Praktikum Pemrograman — Kasus {k_num}')}"
 
         if ext == '.pdf':
             fn_low = file_name.lower()
@@ -123,6 +149,7 @@ def extract_file_description(file_path, file_name="", subfolder=""):
             return f"Header Specification & ADT Definition — Kasus {k_num}"
         else:
             return topic
+
 
     # 3. Komentar umum untuk file non-kasus
     if ext in {'.cpp', '.c', '.cxx', '.h', '.hpp'}:
@@ -440,6 +467,262 @@ def generate_markdown(tasks):
     
     return "\n".join(md)
 
+def update_task_tracker(tasks):
+    """Otomatis sinkronkan task-tracker/index.html dengan modul dan sub-tugas terbaru."""
+    tracker_path = ROOT_DIR / "task-tracker" / "index.html"
+    if not tracker_path.exists():
+        return
+        
+    content = tracker_path.read_text(encoding="utf-8")
+    
+    total_tasks = len(tasks)
+    total_cpp = sum(t["cpp_count"] for t in tasks)
+    total_pdf = sum(t["pdf_count"] for t in tasks)
+    total_loc = sum(t["loc"] for t in tasks)
+    
+    # 1. Update data-target stats in stats-section
+    content = re.sub(
+        r'(<div class="stat-card stat-total">.*?<span class="stat-number"\s+data-target=")\d+(")',
+        rf'\g<1>{total_tasks}\g<2>',
+        content, flags=re.DOTALL
+    )
+    content = re.sub(
+        r'(<div class="stat-card stat-files">.*?<span class="stat-number"\s+data-target=")\d+(")',
+        rf'\g<1>{total_cpp}\g<2>',
+        content, flags=re.DOTALL
+    )
+    content = re.sub(
+        r'(<div class="stat-card stat-docs">.*?<span class="stat-number"\s+data-target=")\d+(")',
+        rf'\g<1>{total_pdf}\g<2>',
+        content, flags=re.DOTALL
+    )
+    content = re.sub(
+        r'(<div class="stat-card stat-loc">.*?<span class="stat-number"\s+data-target=")\d+(")',
+        rf'\g<1>{total_loc}\g<2>',
+        content, flags=re.DOTALL
+    )
+    
+    # 2. Generate task cards HTML
+    cards_html = []
+    status_icons = {
+        "done": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>',
+        "progress": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
+        "pending": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg>'
+    }
+    
+    for i, t in enumerate(tasks, 1):
+        status_raw = t.get("status", "Selesai").strip()
+        status_key = status_raw.lower()
+        if "proses" in status_key or "progress" in status_key:
+            data_status = "proses"
+            status_class = "progress"
+            status_label = "Dalam Proses"
+            pct = 50
+        elif "belum" in status_key or "pending" in status_key:
+            data_status = "belum"
+            status_class = "pending"
+            status_label = "Belum Mulai"
+            pct = 0
+        else:
+            data_status = "selesai"
+            status_class = "done"
+            status_label = "Selesai"
+            pct = 100
+
+        badge_class = f"modul-{((i - 1) % 6) + 1}"
+        icon_svg = status_icons[status_class]
+        
+        # Sub-stats
+        sub_count = len(t["subfolders"]) if t["subfolders"] else len([f for f in t["files"] if f["ext"] in {'.cpp', '.c', '.cxx', '.h', '.hpp'}])
+        sub_label = "Sub-Folder" if t["subfolders"] else "Kasus"
+        
+        # Subtasks
+        subtasks_html = []
+        code_files = [f for f in t["files"] if f["ext"] in {'.cpp', '.c', '.cxx', '.h', '.hpp'}]
+        display_files = code_files if code_files else t["files"]
+        
+        for f in display_files:
+            item_status_class = "done" if status_class == "done" else status_class
+            desc = f.get("description", f["name"])
+            loc_or_size = f"{f['loc']} LOC" if f['loc'] > 0 else f['size']
+            meta = f"{loc_or_size} • {f['name']}"
+            check_svg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>'
+            
+            subtasks_html.append(f"""                            <div class="detail-item {item_status_class}" data-sub="{desc}">
+                                <div class="check-circle">{check_svg}</div>
+                                <div class="detail-info">
+                                    <span class="detail-title">{desc}</span>
+                                    <span class="detail-meta">{meta}</span>
+                                </div>
+                            </div>""")
+
+        subtasks_block = "\n".join(subtasks_html)
+        
+        card = f"""                <!-- Modul {i}: {t['title']} -->
+                <div class="task-card" data-status="{data_status}" data-module="{i}">
+                    <div class="card-header">
+                        <div class="card-badge {badge_class}">Modul {i:02d}</div>
+                        <div class="card-status {status_class}">
+                            {icon_svg}
+                            {status_label}
+                        </div>
+                    </div>
+                    <h3 class="card-title">{t['title']}</h3>
+                    <p class="card-topic">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                        {t['topic']}
+                    </p>
+                    <div class="card-stats">
+                        <div class="mini-stat">
+                            <span class="mini-num">{t['cpp_count']}</span>
+                            <span class="mini-label">File C++</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="mini-num">{t['pdf_count']}</span>
+                            <span class="mini-label">Dokumen</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="mini-num">{t['loc']}</span>
+                            <span class="mini-label">LOC</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="mini-num">{sub_count}</span>
+                            <span class="mini-label">{sub_label}</span>
+                        </div>
+                    </div>
+                    <div class="card-progress">
+                        <div class="card-progress-bar" style="--progress: {pct}%"></div>
+                    </div>
+                    <button class="card-expand" aria-label="Lihat Detail" onclick="toggleExpand(this)">
+                        <span>Lihat Detail</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="card-details">
+                        <div class="details-grid">
+{subtasks_block}
+                        </div>
+                    </div>
+                </div>"""
+        cards_html.append(card)
+
+    all_cards_block = "\n\n".join(cards_html)
+    
+    # 3. Replace section #tasks
+    content = re.sub(
+        r'(<section class="tasks-section" id="tasks">).*?(</section>)',
+        f'\\1\n\n{all_cards_block}\n            \\2',
+        content, flags=re.DOTALL
+    )
+    
+    # 4. Generate Timeline
+    timeline_html = []
+    for i, t in enumerate(tasks, 1):
+        status_raw = t.get("status", "Selesai").strip().lower()
+        t_dot = "done" if "selesai" in status_raw else ("progress" if "proses" in status_raw else "pending")
+        k_count = len(t["subfolders"]) if t["subfolders"] else t["cpp_count"]
+        t_head = t['title']
+        if len(t_head) > 40 and " — " in t_head:
+            parts = t_head.split(" — ")
+            t_head = f"{parts[0]} — {parts[1][:30]}..." if len(parts[1]) > 32 else t_head
+
+        timeline_html.append(f"""                    <div class="timeline-item">
+                        <div class="timeline-dot {t_dot}"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Modul {i:02d}</span>
+                            <h4>{t_head} — {k_count} Kasus Selesai</h4>
+                            <p>{t['topic']}</p>
+                        </div>
+                    </div>""")
+
+    timeline_block = "\n".join(timeline_html)
+    content = re.sub(
+        r'(<div class="timeline">).*?(</div>\s*</section>)',
+        f'\\1\n{timeline_block}\n                \\2',
+        content, flags=re.DOTALL
+    )
+
+    # 5. Update sync timestamp in footer
+    months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
+    now = datetime.now()
+    month_name = months[now.month - 1]
+    time_str = f"{now.day} {month_name} {now.year}, {now.strftime('%H:%M')} WIB"
+    content = re.sub(
+        r'<p class="footer-sync">Terakhir disinkronkan:.*?</p>',
+        f'<p class="footer-sync">Terakhir disinkronkan: {time_str}</p>',
+        content
+    )
+    
+    tracker_path.write_text(content, encoding="utf-8")
+    print(f"✅ task-tracker/index.html berhasil disinkronkan ({total_tasks} modul, {total_cpp} C++, {total_loc} LOC).")
+
+def update_portal_index(tasks):
+    """Otomatis sinkronkan landing page (index.html) dengan modul dan statistik terbaru."""
+    index_path = ROOT_DIR / "index.html"
+    if not index_path.exists():
+        return
+        
+    content = index_path.read_text(encoding="utf-8")
+    
+    total_tasks = len(tasks)
+    total_cpp = sum(t["cpp_count"] for t in tasks)
+    total_loc = sum(t["loc"] for t in tasks)
+    
+    # Update hero stats
+    content = re.sub(
+        r'(<div class="hero-stat-num"\s+data-count=")\d+(">\d*</div>\s*<div class="hero-stat-label">Modul Tugas</div>)',
+        rf'\g<1>{total_tasks}\g<2>',
+        content
+    )
+    content = re.sub(
+        r'(<div class="hero-stat-num"\s+data-count=")\d+(">\d*</div>\s*<div class="hero-stat-label">Source Files</div>)',
+        rf'\g<1>{total_cpp}\g<2>',
+        content
+    )
+    content = re.sub(
+        r'(<div class="hero-stat-num"\s+data-count=")\d+(">\d*</div>\s*<div class="hero-stat-label">Baris Kode</div>)',
+        rf'\g<1>{total_loc}\g<2>',
+        content
+    )
+    
+    # Update Modul Chips
+    chips_html = []
+    for i, t in enumerate(tasks, 1):
+        dot_cls = f"c{((i - 1) % 6) + 1}"
+        title = t["title"]
+        if "Kulino" in title:
+            chip_text = "Tugas 1 — Kulino"
+        elif "Fun Run" in title:
+            chip_text = "Tugas 1 — Fun Run & ADT"
+        elif "Daspro Latihan 2" in title:
+            chip_text = "Daspro Latihan 2"
+        elif "Daspro Latihan" in title:
+            chip_text = "Daspro Latihan"
+        elif "Tugas 2" in title:
+            chip_text = "Tugas 2 — Kondisi & Array"
+        elif " — " in title:
+            parts = title.split(" — ")
+            chip_text = f"{parts[0]} — {parts[1][:20]}..." if len(parts[1]) > 22 else title
+        else:
+            chip_text = title
+
+        status_text = "✓ Done" if t.get("status", "Selesai").lower() == "selesai" else "⚡ Active"
+        chips_html.append(f"""                <div class="modul-chip">
+                    <span class="chip-dot {dot_cls}"></span>
+                    {chip_text}
+                    <span class="chip-status">{status_text}</span>
+                </div>""")
+
+    chips_block = "\n".join(chips_html)
+    content = re.sub(
+        r'(<!-- Modul Chips -->\s*<div class="moduls-row">).*?(</div>\s*</section>)',
+        f'\\1\n{chips_block}\n            \\2',
+        content, flags=re.DOTALL
+    )
+    
+    index_path.write_text(content, encoding="utf-8")
+    print(f"✅ index.html berhasil disinkronkan ({total_tasks} modul chips).")
+
+
 def setup_git_pre_commit_hook():
     """Pasang git hook pre-commit otomatis jika berada di repositori git."""
     git_hooks_dir = ROOT_DIR / ".git" / "hooks"
@@ -448,10 +731,10 @@ def setup_git_pre_commit_hook():
         
     hook_file = git_hooks_dir / "pre-commit"
     hook_content = """#!/bin/sh
-# Git Pre-Commit Hook: Otomatis perbarui README.md sebelum commit
-echo "[Git Hook] Memperbarui README.md secara otomatis..."
+# Git Pre-Commit Hook: Otomatis perbarui README, Tracker, dan Portal sebelum commit
+echo "[Git Hook] Memperbarui README.md, Task Tracker & Portal..."
 python scripts/generate_readme.py
-git add README.md
+git add README.md index.html task-tracker/index.html
 """
     try:
         # Tulis hook jika belum ada atau berbeda
@@ -474,11 +757,17 @@ def main():
     readme_path = ROOT_DIR / "README.md"
     with open(readme_path, "w", encoding="utf-8") as f:
         f.write(markdown_content)
-        
     print(f"✅ README.md berhasil diperbarui di: {readme_path}")
     
+    print("🚀 Menyinkronkan Dashboard Task Tracker...")
+    update_task_tracker(tasks)
+
+    print("🌐 Menyinkronkan Landing Page Portal...")
+    update_portal_index(tasks)
+        
     # Pasang git pre-commit hook otomatis
     setup_git_pre_commit_hook()
 
 if __name__ == "__main__":
     main()
+

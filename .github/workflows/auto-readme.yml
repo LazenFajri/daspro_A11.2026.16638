@@ -1,4 +1,4 @@
-name: Auto Update README
+name: Auto Update README & Task Tracker
 
 on:
   push:
@@ -6,6 +6,8 @@ on:
       - main
     paths-ignore:
       - 'README.md'
+      - 'index.html'
+      - 'task-tracker/index.html'
       - '.gitignore'
   workflow_dispatch:
 
@@ -13,7 +15,7 @@ permissions:
   contents: write
 
 jobs:
-  update-readme:
+  sync-dashboard:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -26,11 +28,12 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run README Generator
+      - name: Run README & Tracker Generator
         run: python scripts/generate_readme.py
 
       - name: Commit & Push if Changes Detected
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "docs(readme): auto-sync assignment catalog and statistics [skip ci]"
-          file_pattern: "README.md"
+          commit_message: "docs(sync): auto-sync assignment catalog, task tracker, and statistics [skip ci]"
+          file_pattern: "README.md index.html task-tracker/index.html **/info.json"
+
