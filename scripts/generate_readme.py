@@ -689,16 +689,16 @@ def update_portal_index(tasks):
     for i, t in enumerate(tasks, 1):
         dot_cls = f"c{((i - 1) % 6) + 1}"
         title = t["title"]
+        m_latihan = re.search(r'Daspro Latihan\s*(\d+)?', title, re.IGNORECASE)
         if "Kulino" in title:
             chip_text = "Tugas 1 — Kulino"
         elif "Fun Run" in title:
             chip_text = "Tugas 1 — Fun Run & ADT"
-        elif "Daspro Latihan 2" in title:
-            chip_text = "Daspro Latihan 2"
-        elif "Daspro Latihan" in title:
-            chip_text = "Daspro Latihan"
         elif "Tugas 2" in title:
             chip_text = "Tugas 2 — Kondisi & Array"
+        elif m_latihan:
+            num = m_latihan.group(1)
+            chip_text = f"Daspro Latihan {num}" if num else "Daspro Latihan"
         elif " — " in title:
             parts = title.split(" — ")
             chip_text = f"{parts[0]} — {parts[1][:20]}..." if len(parts[1]) > 22 else title
