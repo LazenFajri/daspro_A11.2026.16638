@@ -647,9 +647,9 @@ def update_task_tracker(tasks):
     month_name = months[now.month - 1]
     time_str = f"{now.day} {month_name} {now.year}, {now.strftime('%H:%M')} WIB"
     content = re.sub(
-        r'<p class="footer-sync">Terakhir disinkronkan:.*?</p>',
-        f'<p class="footer-sync">Terakhir disinkronkan: {time_str}</p>',
-        content
+        r'(?:^[<>=]{7}[^\n]*\r?\n|\s*<p class="footer-sync">.*?</p>\s*)+',
+        f'\n                <p class="footer-sync">Terakhir disinkronkan: {time_str}</p>\n            ',
+        content, flags=re.MULTILINE
     )
     
     tracker_path.write_text(content, encoding="utf-8")
