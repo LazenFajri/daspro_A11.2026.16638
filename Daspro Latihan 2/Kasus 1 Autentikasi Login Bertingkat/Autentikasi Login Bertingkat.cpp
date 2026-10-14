@@ -14,7 +14,7 @@ using namespace std;
 
 // ============================================================
 // KAMUS
-// Variabel program dideklarasikan di sini
+// Variabel program
 // ============================================================
 string inputUser;
 string inputPass;

@@ -102,9 +102,9 @@
 
 | Sub-Folder / Modul | Berkas | Format | Ukuran | Baris | Deskripsi & Topik Pembahasan |
 | :--- | :--- | :---: | :---: | :---: | :--- |
-| 📁 `Kasus 1 Autentikasi Login Bertingkat` | [`Autentikasi Login Bertingkat.cpp`](./Daspro%20Latihan%202/Kasus%201%20Autentikasi%20Login%20Bertingkat/Autentikasi%20Login%20Bertingkat.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `3.4 KB` | `77` | Kasus 1 — Autentikasi Login Bertingkat |
+| 📁 `Kasus 1 Autentikasi Login Bertingkat` | [`Autentikasi Login Bertingkat.cpp`](./Daspro%20Latihan%202/Kasus%201%20Autentikasi%20Login%20Bertingkat/Autentikasi%20Login%20Bertingkat.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `3.3 KB` | `77` | Kasus 1 — Autentikasi Login Bertingkat |
 | 📁 `Kasus 1 Autentikasi Login Bertingkat` | [`Autentikasi Login Bertingkat.pdf`](./Daspro%20Latihan%202/Kasus%201%20Autentikasi%20Login%20Bertingkat/Autentikasi%20Login%20Bertingkat.pdf) | ![PDF](https://img.shields.io/badge/-PDF-red?style=flat-square&logo=adobeacrobatreader&logoColor=white) | `57.9 KB` | — | Dokumen Laporan & Analisis — Kasus 1 (Autentikasi Login Bertingkat) |
-| 📁 `Kasus 2 Kalkulator Geometri Bangun Ruang` | [`Kalkulator Geometri Bangun Ruang.cpp`](./Daspro%20Latihan%202/Kasus%202%20Kalkulator%20Geometri%20Bangun%20Ruang/Kalkulator%20Geometri%20Bangun%20Ruang.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `5.5 KB` | `123` | Kasus 2 — Kalkulator Geometri Bangun Ruang |
+| 📁 `Kasus 2 Kalkulator Geometri Bangun Ruang` | [`Kalkulator Geometri Bangun Ruang.cpp`](./Daspro%20Latihan%202/Kasus%202%20Kalkulator%20Geometri%20Bangun%20Ruang/Kalkulator%20Geometri%20Bangun%20Ruang.cpp) | ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white) | `5.4 KB` | `123` | Kasus 2 — Kalkulator Geometri Bangun Ruang |
 | 📁 `Kasus 2 Kalkulator Geometri Bangun Ruang` | [`Kalkulator Geometri Bangun Ruang.pdf`](./Daspro%20Latihan%202/Kasus%202%20Kalkulator%20Geometri%20Bangun%20Ruang/Kalkulator%20Geometri%20Bangun%20Ruang.pdf) | ![PDF](https://img.shields.io/badge/-PDF-red?style=flat-square&logo=adobeacrobatreader&logoColor=white) | `59.1 KB` | — | Dokumen Laporan & Analisis — Kasus 2 (Kalkulator Geometri Bangun Ruang) |
 
 <a id="tugas-1-fun-run-aritmatika-dan-adt"></a>
@@ -187,6 +187,6 @@
 
 [![Last Commit](https://img.shields.io/github/last-commit/LazenFajri/daspro_A11.2026.16638?style=flat-square&logo=github&label=Terakhir%20Diperbarui&color=007ACC)](https://github.com/LazenFajri/daspro_A11.2026.16638/commits/main)
 
-<sub>Terakhir disinkronkan otomatis pada: <b>8 Oktober 2026, 06:38 WIB</b> • Dikelola oleh GitHub Actions</sub>
+<sub>Terakhir disinkronkan otomatis pada: <b>14 Oktober 2026, 07:42 WIB</b> • Dikelola oleh GitHub Actions</sub>
 
 </div>

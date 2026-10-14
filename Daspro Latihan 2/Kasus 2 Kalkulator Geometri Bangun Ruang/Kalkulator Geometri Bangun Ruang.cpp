@@ -13,7 +13,7 @@ using namespace std;
 
 // ============================================================
 // KAMUS
-// Semua variabel program dideklarasikan di sini tanpa 'const'
+// Variabel program
 // ============================================================
 int pilihanObjek;
 int pilihanHitung;
